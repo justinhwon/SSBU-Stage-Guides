@@ -6,6 +6,8 @@ from django.urls import reverse
 from django.template import loader
 from django.views import generic
 
+import urllib.parse
+
 from .models import Character
 
 class HomepageView(generic.ListView):
@@ -14,7 +16,10 @@ class HomepageView(generic.ListView):
 
     def get_queryset(self):
         """
-        Return the last five published questions (not including those set to be
-        published in the future).
+        Return all characters ordered alphabetically.
         """
         return Character.objects.order_by('name')
+
+class CharacterView(generic.DetailView):
+    model = Character
+    template_name = 'guide/character.html'
