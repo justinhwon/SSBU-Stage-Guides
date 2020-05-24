@@ -6,5 +6,6 @@ from .models import Character
 
 class CharacterAdmin(admin.ModelAdmin):
     list_display = ('name', 'number', 'image')
+    #list_editable = ( 'number', 'image')
 
 admin.site.register(Character, CharacterAdmin)
