@@ -9,6 +9,9 @@ media
 # My secret keys and passwords
 settingkeys.py
 
+# The static folder
+static/
+
 # Backup files # 
 *.bak 
 
