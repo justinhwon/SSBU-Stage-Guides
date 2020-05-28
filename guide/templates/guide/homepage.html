@@ -8,7 +8,7 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
+    <link rel="stylesheet" type="text/css" href="{% static 'guide/style.css' %}">
     <title>SSBU Stage Guides</title>
   </head>
   <body>
@@ -31,7 +31,7 @@
 
     <!-- Homepage helper text -->
     <div class="jumbotron text-center">
-        <p>Choose the character you want stage advice with:</p>
+        <p>Choose the character you want stage advice for:</p>
     </div>
 
     <!-- Code for every character card -->
@@ -39,14 +39,27 @@
     <div class="container">
         <div class="row">
         {% for character in character_list %}
-        <div class="col-xs-4 col-sm-2">
-            <div class="card text-center" style="width: 10vw; height: 15vw;">
-            <img src="{% static character.image_link %}" class="card-img-top" alt="character art" style="height: 10vw; width: 10vw; max-height:100%; max-width:100%;">
-            <div class="card-body">
+        <div class="col-3 col-md-2">
+          <!-- attempt to use overlay
+          <div class="card bg-dark text-white">
+            <img class="card-img" src="{% static character.image_link %}" alt="Character image">
+            <div class="card-img-overlay">
               <h5 class="card-title">{{ character.name }}</h5>
+            </div>
+          </div>
+
+
+          <div class="card text-center" style="width: 10vw; height: 14vw;">
+          <img src="{% static character.image_link %}" class="card-img-top" alt="character art" style="height: 10vw; width: 10vw; max-height:100%; max-width:100%;">
+          
+          -->
+          <div class="card text-center" style="width: 10vw; height: 14vw;">
+          <img src="{% static character.image_link %}" class="card-img-top" alt="character art" style="height: 10vw; width: 10vw; max-height:100%; max-width:100%;">
+            <div class="card-body">
+              <h5 class="card-title" style="font-size:1vw;">{{ character.name }}</h5>
               <a href="{% url 'guide:character' character.name %}" class="stretched-link"></a>
             </div>
-            </div>
+          </div>
         </div>
         {% endfor %}
         </div>
