@@ -1,0 +1,16 @@
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'guide/style.css' %}">
+
+{% if character_list %}
+    <ul>
+    {% for character in character_list %}
+        <li>{{ character.name }}</a></li>
+        <a href="{% url 'guide:character' character.name %}">
+        <img src="{% static character.image_link %}" alt="character">
+        </a>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No characters at this time.</p>
+{% endif %}
