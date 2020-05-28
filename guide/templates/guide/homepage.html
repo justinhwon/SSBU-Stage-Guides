@@ -39,7 +39,7 @@
     <div class="container">
         <div class="row">
         {% for character in character_list %}
-        <div class="col-3 col-md-2">
+        <div class="col-3 col-md-2" style="padding:5px">
           <!-- attempt to use overlay
           <div class="card bg-dark text-white">
             <img class="card-img" src="{% static character.image_link %}" alt="Character image">
@@ -53,10 +53,10 @@
           <img src="{% static character.image_link %}" class="card-img-top" alt="character art" style="height: 10vw; width: 10vw; max-height:100%; max-width:100%;">
           
           -->
-          <div class="card text-center" style="width: 10vw; height: 14vw;">
-          <img src="{% static character.image_link %}" class="card-img-top" alt="character art" style="height: 10vw; width: 10vw; max-height:100%; max-width:100%;">
+          <div class="card text-center h-100" style="width:100%;">
+          <img src="{% static character.image_link %}" class="card-img-top" alt="character art">
             <div class="card-body">
-              <h5 class="card-title" style="font-size:1vw;">{{ character.name }}</h5>
+              <h5 class="card-title">{{ character.name }}</h5>
               <a href="{% url 'guide:character' character.name %}" class="stretched-link"></a>
             </div>
           </div>
