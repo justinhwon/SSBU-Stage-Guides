@@ -1,0 +1,83 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{% static 'guide/style.css' %}">
+    <title>SSBU Stage Guides</title>
+  </head>
+  <body>
+    <!-- Navbar at top of every page -->
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #ffa500;">
+        <a class="navbar-brand" href="{% url 'guide:homepage' %}" style=" font-weight: bold;">SSBU Stage Guides</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+        </div>
+    </nav>
+
+    <!-- Homepage helper text -->
+    <div class="jumbotron text-center">
+        <p>Choose the character you want stage advice for:</p>
+    </div>
+
+    <!-- Code for every character card -->
+    {% if character_list %}
+    <div class="container">
+        <div class="row">
+        {% for character in character_list %}
+        <div class="col-3 col-md-2" style="padding:5px">
+          <!-- attempt to use overlay
+          <div class="card bg-dark text-white">
+            <img class="card-img" src="{% static character.image_link %}" alt="Character image">
+            <div class="card-img-overlay">
+              <h5 class="card-title">{{ character.name }}</h5>
+            </div>
+          </div>
+
+
+          <div class="card text-center" style="width: 10vw; height: 14vw;">
+          <img src="{% static character.image_link %}" class="card-img-top" alt="character art" style="height: 10vw; width: 10vw; max-height:100%; max-width:100%;">
+          
+          -->
+          <div class="card text-center h-100" style="width:100%;">
+          <img src="{% static character.image_link %}" class="card-img-top" alt="character art">
+            <div class="card-body">
+              <h5 class="card-title">{{ character.name }}</h5>
+              <a href="{% url 'guide:character' character.name %}" class="stretched-link"></a>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+        </div>
+    </div>
+    {% else %}
+        <p>No characters at this time.</p>
+    {% endif %}
+    
+
+    <!-- Footer at bottom of every page -->
+    <div class="jumbotron text-center" style="margin-bottom:0">
+        <p>SSBU Stage Guides isn't endorsed by Nintendo and doesn't reflect the views or opinions of Nintendo or anyone officially involved in producing or managing Super Smash Bros. Super Smash Bros. and Nintendo are trademarks or registered trademarks of Nintendo CO., LTD</p>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
