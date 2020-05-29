@@ -23,3 +23,6 @@ class HomepageView(generic.ListView):
 class CharacterView(generic.DetailView):
     model = Character
     template_name = 'guide/character.html'
+
+class ContactView(generic.TemplateView):
+    template_name = 'guide/contact.html'
