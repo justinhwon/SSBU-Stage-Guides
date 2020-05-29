@@ -26,3 +26,13 @@ class CharacterView(generic.DetailView):
 
 class ContactView(generic.TemplateView):
     template_name = 'guide/contact.html'
+
+class MatchupsView(generic.ListView):
+    template_name = 'guide/matchups.html'
+    context_object_name = 'character_list'
+
+    def get_queryset(self):
+        """
+        Return all characters ordered alphabetically.
+        """
+        return Character.objects.order_by('name')

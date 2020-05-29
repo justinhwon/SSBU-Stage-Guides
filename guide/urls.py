@@ -7,5 +7,6 @@ urlpatterns = [
     #path('', views.index, name='index'),
     path('', views.HomepageView.as_view(), name='homepage'),
     path('contact', views.ContactView.as_view(), name='contact'),
+    path('matchups', views.MatchupsView.as_view(), name='matchups'),
     path('<str:pk>/', views.CharacterView.as_view(), name='character'),
 ]
