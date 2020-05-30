@@ -8,13 +8,15 @@
     <p>Total votes: {{ num_votes }}</p>
     <p>{{votes}}</p>
     <h2> Best Stages Ranking</h2>
-    {% for vote in votes %}
-        <p>
+
+    {% for vote in votes %} 
+        <div class="col">
             #{{forloop.counter}}: {{vote.0}} <br>
             <img src="{% static vote.2 %}" alt="stage image"> <br>
             Score: {{vote.1}}
-        </p>
+        </div>
     {% endfor %}
+        
 {% else %}
 <p>There are no votes yet. Please contribute!</p>
 {% endif %}
