@@ -1,41 +1,37 @@
+{% extends "guide/base.html" %}
 {% load static %}
 
-<h1>{{ character.name }}</h1>
+{% block content %}
 
-<img src="{% static character.image_link %}" alt="character">
+<div class="text-center">
+<h1 style="font-weight: bold;">{{ character.name }}</h1>
+</div>
+
+<div class="text-center">
+<img src="{% static character.image_link %}" class="img-fluid" alt="character art">
+</div>
 
 {% if votes %}
-    <p>Total votes: {{ num_votes }}</p>
+    <p class="text-center">Total votes: {{ num_votes }}</p>
+    <!-- for debugging
     <p>{{votes}}</p>
-    <h2> Best Stages Ranking</h2>
+     -->
+    <h2 class="text-center" style="font-weight: bold;"> Best Stages Ranking</h2>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th scope="col">Rank</th>
-                <th scope="col">Image</th>
-                <th scope="col">Score</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for vote in votes %} 
-            <!--
-                <p>
+    <div class="row">
+        {% for vote in votes %} 
+            <div class="col-6 col-md-3">
+                <h4>
                     #{{forloop.counter}}: {{vote.0}} <br>
                     <img src="{% static vote.2 %}" alt="stage image"> <br>
                     Score: {{vote.1}}
-                </p>
-            -->
-            <tr>
-                <th scope="row">#{{forloop.counter}}: {{vote.0}}</th>
-                <td><img src="{% static vote.2 %}" alt="stage image"></td>
-                <td>{{vote.1}}</td>
-            </tr>
+                </h4>
+            </div>
+        {% endfor %}
+    </div>
 
-        
-            {% endfor %}
-        </tbody>
-    </table>
 {% else %}
-<p>There are no votes yet. Please contribute!</p>
+<p class="text-center">There are no votes yet. Please contribute!</p>
 {% endif %}
+
+{% endblock %}
