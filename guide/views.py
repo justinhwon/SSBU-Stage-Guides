@@ -11,7 +11,7 @@ import urllib.parse
 from django.db.models import Avg
 import math
 
-from .models import Character
+from .models import Character, Vote
 
 class HomepageView(generic.ListView):
     template_name = 'guide/homepage.html'
@@ -114,11 +114,11 @@ class VoteForm(forms.Form):
     """ The form for voting on stage scores. """
 
     # all votes are integer values between -2 and 2
-    VOTEVALUES=[(-2,'-2: awful'),
-         (-1,'-1: bad'),
-         (0, '0: neutral'),
-         (1, '1: good'),
-         (2, '2: great'),
+    VOTEVALUES=[(-2,'-2: Awful'),
+         (-1,'-1: Bad'),
+         (0, '0: Neutral'),
+         (1, '1: Good'),
+         (2, '2: Great'),
          ]
 
     # name of character is the primary key to get the character object
@@ -135,6 +135,29 @@ class VoteForm(forms.Form):
     yoshi_island = forms.ChoiceField(label="Yoshi's Island", choices=VOTEVALUES, widget=forms.RadioSelect, required=False)
     unova = forms.ChoiceField(label='Unova Pokémon League', choices=VOTEVALUES, widget=forms.RadioSelect, required=False)
 
+class VoteModelForm(forms.ModelForm):
+    VOTEVALUES=[(-2,'-2: Awful'),
+         (-1,'-1: Bad'),
+         (0, '0: Neutral'),
+         (1, '1: Good'),
+         (2, '2: Great'),
+         ]
+    battlefield = forms.ChoiceField(choices=VOTEVALUES, widget=forms.RadioSelect, required=False)
+    final_destination = forms.ChoiceField(label='Final Destination', choices=VOTEVALUES, widget=forms.RadioSelect, required=False)
+    pokemon_stadium = forms.ChoiceField(label='Pokémon Stadium 2', choices=VOTEVALUES, widget=forms.RadioSelect, required=False)
+    smashville = forms.ChoiceField(choices=VOTEVALUES, widget=forms.RadioSelect, required=False)
+    town = forms.ChoiceField(label='Town and City', choices=VOTEVALUES, widget=forms.RadioSelect, required=False)
+    lylat = forms.ChoiceField(label='Lylat Cruise', choices=VOTEVALUES, widget=forms.RadioSelect, required=False)
+    kalos = forms.ChoiceField(label='Kalos Pokémon League', choices=VOTEVALUES, widget=forms.RadioSelect, required=False)
+    yoshi_story = forms.ChoiceField(label="Yoshi's Story", choices=VOTEVALUES, widget=forms.RadioSelect, required=False)
+    yoshi_island = forms.ChoiceField(label="Yoshi's Island", choices=VOTEVALUES, widget=forms.RadioSelect, required=False)
+    unova = forms.ChoiceField(label='Unova Pokémon League', choices=VOTEVALUES, widget=forms.RadioSelect, required=False)
+
+    class Meta:
+        model = Vote
+        fields = ['character', 'battlefield', 'final_destination', 'pokemon_stadium', 'smashville',
+        'town', 'lylat', 'kalos', 'yoshi_story', 'yoshi_island', 'unova']
+
 class VoteView(generic.FormView):
     template_name = 'guide/vote.html'
-    form_class = VoteForm
+    form_class = VoteModelForm
