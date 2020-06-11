@@ -2,7 +2,9 @@
 {% load static %}
 
 {% block content %}
-<form action="/your-name/" method="post">
+<h1>Rank the stages for {{character.name}}</h1>
+<h5>Feel free to skip any stages you're not sure about.</h5>
+<form action="{% url 'guide:vote' character.name %}" method="post">
     {% csrf_token %}
     {{ form }}
     <input type="submit" value="Submit">
