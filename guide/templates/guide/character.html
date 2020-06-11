@@ -18,16 +18,18 @@
      -->
     <h2 class="text-center" style="font-weight: bold;"> Best Stages Ranking</h2>
 
-    <div class="row">
-        {% for vote in votes %} 
-            <div class="col-6 col-md-3">
-                <h4>
-                    #{{forloop.counter}}: {{vote.0}} <br>
-                    <img src="{% static vote.2 %}" alt="stage image"> <br>
-                    Score: {{vote.1}}
-                </h4>
-            </div>
-        {% endfor %}
+    <div class="container-fluid">
+        <div class="row">
+            {% for vote in votes %} 
+                <div class="col-6 col-md-3">
+                    <h4>
+                        <b>#{{forloop.counter}}: {{vote.0}} </b><br>
+                        <img src="{% static vote.2 %}" alt="stage image"> <br>
+                        Score: {{vote.1|floatformat:2}} {% if vote.1 is None %} No votes. {% endif %}
+                    </h4>
+                </div>
+            {% endfor %}
+        </div>
     </div>
 
 {% else %}

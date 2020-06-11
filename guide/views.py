@@ -60,7 +60,7 @@ def varToName(d):
         elif key == 'unova__avg':
             key = "Unova Pokémon League"
             img = 'guide/stage_images/' + 'unova.png'
-        temp = (key, value, img)
+        temp = [key, value, img]
         mappedDict.append(temp)
     return mappedDict
 
@@ -89,9 +89,21 @@ class CharacterView(generic.DetailView):
             # convert to list of form (stage_name, score)
             vote_avgs = varToName(vote_avgs_dict)
 
-            # sort stage by avg score
-            vote_avgs.sort(key = lambda x: -1 * math.inf if x[1] is None else x[1], reverse=True)
+            
 
+            # sort stage by avg score
+            #vote_avgs.sort(key = lambda x: x[1], reverse=True)
+            vote_avgs.sort(key = lambda x: 0 if x[1] is None else x[1], reverse=True)
+
+            # considered changing Nones to 0s, changed mind
+            """
+            # convert Nones to 0's
+            for x in vote_avgs:
+                if x[1] is None:
+                    x[1] = 0
+            """
+
+            
             # set context
             context['votes'] = vote_avgs
             context['num_votes'] = len(votes)
