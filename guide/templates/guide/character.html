@@ -11,6 +11,10 @@
 <img src="{% static character.image_link %}" class="img-fluid" alt="character art">
 </div>
 
+<div class="text-center">
+<a href="{% url 'guide:vote' character.name %}" class="btn btn-primary">Vote on Stages</a>
+</div>
+
 {% if votes %}
     <p class="text-center">Total votes: {{ num_votes }}</p>
     <!-- for debugging
