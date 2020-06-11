@@ -1,12 +1,62 @@
 {% extends "guide/base.html" %}
 {% load static %}
+{% load crispy_forms_tags %}
 
 {% block content %}
 <h1>Rank the stages for {{character.name}}</h1>
 <h5>Feel free to skip any stages you're not sure about.</h5>
+<div class="container-fluid">
 <form action="{% url 'guide:vote' character.name %}" method="post">
     {% csrf_token %}
-    {{ form }}
-    <input type="submit" value="Submit">
+
+    {{ form.character|as_crispy_field }}
+    
+    <div class="form-row">
+        <div class="form-group col-6">
+          {{ form.battlefield|as_crispy_field }}
+        </div>
+        <div class="form-group col-6 ">
+          {{ form.final_destination|as_crispy_field }}
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="form-group col-6">
+          {{ form.pokemon_stadium|as_crispy_field }}
+        </div>
+        <div class="form-group col-6 ">
+          {{ form.smashville|as_crispy_field }}
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="form-group col-6">
+          {{ form.lylat|as_crispy_field }}
+        </div>
+        <div class="form-group col-6 ">
+          {{ form.town|as_crispy_field }}
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="form-group col-6">
+          {{ form.kalos|as_crispy_field }}
+        </div>
+        <div class="form-group col-6 ">
+          {{ form.yoshi_story|as_crispy_field }}
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="form-group col-6">
+          {{ form.yoshi_island|as_crispy_field }}
+        </div>
+        <div class="form-group col-6 ">
+          {{ form.unova|as_crispy_field }}
+        </div>
+    </div>
+    
+    <button type="submit" class="btn btn-primary">Submit Vote</button>
 </form>
+</div>
 {% endblock %}

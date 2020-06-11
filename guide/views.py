@@ -93,7 +93,7 @@ class CharacterView(generic.DetailView):
 
             # sort stage by avg score
             #vote_avgs.sort(key = lambda x: x[1], reverse=True)
-            vote_avgs.sort(key = lambda x: 0 if x[1] is None else x[1], reverse=True)
+            vote_avgs.sort(key = lambda x: -1 * math.inf if x[1] is None else x[1], reverse=True)
 
             # considered changing Nones to 0s, changed mind
             """
@@ -148,12 +148,13 @@ class VoteForm(forms.Form):
     unova = forms.ChoiceField(label='Unova Pokémon League', choices=VOTEVALUES, widget=forms.RadioSelect, required=False)
 
 class VoteModelForm(forms.ModelForm):
-    VOTEVALUES=[(-2, '-2: Awful'),
-         (-1, '-1: Bad'),
-         (0, '0: Neutral'),
-         (1, '1: Good'),
+    VOTEVALUES=[
          (2, '2: Great'),
-         (None, 'N/A')
+         (1, '1: Good'),
+         (0, '0: Neutral'),
+         (-1, '-1: Bad'),
+         (-2, '-2: Awful'),
+         ('', 'N/A')
          ]
     
     battlefield = forms.ChoiceField(choices=VOTEVALUES, widget=forms.RadioSelect, required=False)
