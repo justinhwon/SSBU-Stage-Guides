@@ -1,7 +1,7 @@
 from django.shortcuts import get_object_or_404, render
 
 # Create your views here.
-from django.http import HttpResponse, HttpResponseRedirect
+from django.http import HttpResponse, HttpResponseRedirect, Http404
 from django.urls import reverse
 from django.template import loader
 from django.views import generic
@@ -121,31 +121,6 @@ class MatchupsView(generic.ListView):
         Return all characters ordered alphabetically.
         """
         return Character.objects.order_by('name')
-
-class VoteForm(forms.Form):
-    """ The form for voting on stage scores. """
-
-    # all votes are integer values between -2 and 2
-    VOTEVALUES=[(-2,'-2: Awful'),
-         (-1,'-1: Bad'),
-         (0, '0: Neutral'),
-         (1, '1: Good'),
-         (2, '2: Great'),
-         ]
-
-    # name of character is the primary key to get the character object
-    character = forms.CharField(max_length=30)
-    # each stage can be voted on, but no votes are required
-    battlefield = forms.ChoiceField(choices=VOTEVALUES, widget=forms.RadioSelect, required=False)
-    final_destination = forms.ChoiceField(label='Final Destination', choices=VOTEVALUES, widget=forms.RadioSelect, required=False)
-    pokemon_stadium = forms.ChoiceField(label='Pokémon Stadium 2', choices=VOTEVALUES, widget=forms.RadioSelect, required=False)
-    smashville = forms.ChoiceField(choices=VOTEVALUES, widget=forms.RadioSelect, required=False)
-    town = forms.ChoiceField(label='Town and City', choices=VOTEVALUES, widget=forms.RadioSelect, required=False)
-    lylat = forms.ChoiceField(label='Lylat Cruise', choices=VOTEVALUES, widget=forms.RadioSelect, required=False)
-    kalos = forms.ChoiceField(label='Kalos Pokémon League', choices=VOTEVALUES, widget=forms.RadioSelect, required=False)
-    yoshi_story = forms.ChoiceField(label="Yoshi's Story", choices=VOTEVALUES, widget=forms.RadioSelect, required=False)
-    yoshi_island = forms.ChoiceField(label="Yoshi's Island", choices=VOTEVALUES, widget=forms.RadioSelect, required=False)
-    unova = forms.ChoiceField(label='Unova Pokémon League', choices=VOTEVALUES, widget=forms.RadioSelect, required=False)
 
 class VoteModelForm(forms.ModelForm):
     VOTEVALUES=[
@@ -275,4 +250,15 @@ class VoteView(generic.CreateView):
         context['character'] = get_object_or_404(Character, pk=self.kwargs['charactername'])
         return context
 
-    
+
+def SearchView(request):
+    try:
+        characterObject = Character.objects.get(pk=request.GET['Character'])
+    except (KeyError, Character.DoesNotExist):
+        # Redisplay the question voting form.
+        raise Http404("Character name does not exist.")
+    else:
+        # Always return an HttpResponseRedirect after successfully dealing
+        # with POST data. This prevents data from being posted twice if a
+        # user hits the Back button.
+        return HttpResponseRedirect(reverse('guide:character', args=(request.GET['Character'],)))

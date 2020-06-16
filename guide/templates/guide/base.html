@@ -34,13 +34,97 @@
               <a class="nav-link" href="{% url 'guide:contact' %}">Contact</a>
             </li>
           </ul>
-          <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search character name" aria-label="Search" onkeyup="myFunction()">
+          <form class="form-inline my-2 my-lg-0" action="{% url 'guide:search' %}" method="get">
+            <input list="Character" name="Character" placeholder="Search character name" required>
+            <datalist id="Character">
+                <option value="Banjo & Kazooie"> 
+                <option value="Bayonetta"> 
+                <option value="Bowser"> 
+                <option value="Bowser Jr."> 
+                <option value="Byleth"> 
+                <option value="Captain Falcon"> 
+                <option value="Charizard"> 
+                <option value="Chrom"> 
+                <option value="Cloud"> 
+                <option value="Corrin"> 
+                <option value="Daisy"> 
+                <option value="Dark Pit"> 
+                <option value="Dark Samus"> 
+                <option value="Diddy Kong"> 
+                <option value="Donkey Kong"> 
+                <option value="Dr. Mario"> 
+                <option value="Duck Hunt"> 
+                <option value="Falco"> 
+                <option value="Fox"> 
+                <option value="Ganondorf"> 
+                <option value="Greninja"> 
+                <option value="Hero"> 
+                <option value="Ice Climbers"> 
+                <option value="Ike"> 
+                <option value="Incineroar"> 
+                <option value="Inkling"> 
+                <option value="Isabelle"> 
+                <option value="Ivysaur"> 
+                <option value="Jigglypuff"> 
+                <option value="Joker"> 
+                <option value="Ken"> 
+                <option value="King Dedede"> 
+                <option value="King K. Rool"> 
+                <option value="Kirby"> 
+                <option value="Link"> 
+                <option value="Little Mac"> 
+                <option value="Lucario"> 
+                <option value="Lucas"> 
+                <option value="Lucina"> 
+                <option value="Luigi"> 
+                <option value="Mario"> 
+                <option value="Marth"> 
+                <option value="Mega Man"> 
+                <option value="Meta Knight"> 
+                <option value="Mewtwo"> 
+                <option value="Mii Brawler"> 
+                <option value="Mii Gunner"> 
+                <option value="Mii Swordfighter"> 
+                <option value="Mr. Game & Watch"> 
+                <option value="Ness"> 
+                <option value="Olimar"> 
+                <option value="Pac-Man"> 
+                <option value="Palutena"> 
+                <option value="Peach"> 
+                <option value="Pichu"> 
+                <option value="Pikachu"> 
+                <option value="Piranha Plant"> 
+                <option value="Pit"> 
+                <option value="Pokémon Trainer"> 
+                <option value="Richter"> 
+                <option value="Ridley"> 
+                <option value="R.O.B."> 
+                <option value="Robin"> 
+                <option value="Rosalina & Luma"> 
+                <option value="Roy"> 
+                <option value="Ryu"> 
+                <option value="Samus"> 
+                <option value="Sheik"> 
+                <option value="Shulk"> 
+                <option value="Simon"> 
+                <option value="Snake"> 
+                <option value="Sonic"> 
+                <option value="Squirtle"> 
+                <option value="Terry"> 
+                <option value="Toon Link"> 
+                <option value="Villager"> 
+                <option value="Wario"> 
+                <option value="Wii Fit Trainer"> 
+                <option value="Wolf"> 
+                <option value="Yoshi"> 
+                <option value="Young Link"> 
+                <option value="Zelda"> 
+                <option value="Zero Suit Samus"> 
+            </datalist>
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
           </form>
         </div>
     </nav>
-    
 
     {% block content %}
     
