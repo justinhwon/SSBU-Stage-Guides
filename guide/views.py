@@ -112,6 +112,9 @@ class CharacterView(generic.DetailView):
 class ContactView(generic.TemplateView):
     template_name = 'guide/contact.html'
 
+class AboutView(generic.TemplateView):
+    template_name = 'guide/about.html'
+
 class MatchupsView(generic.ListView):
     template_name = 'guide/matchups.html'
     context_object_name = 'character_list'
