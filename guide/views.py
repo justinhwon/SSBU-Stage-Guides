@@ -361,4 +361,47 @@ class MatchupInfoView(generic.DetailView):
             # set context
             context['opp_votes'] = opp_vote_avgs
             context['num_opp_votes'] = len(opp_votes)
+
+        # get the score differences between each characters rankings (from player char's POV)
+        # if one of the characters has no votes, say not enough data
+        if not context['votes'] or not context['opp_votes']:
+            context['matchupscores'] = []
+        # otherwise get score differentials by sorting by stagename and taking differences
+        else:
+            # sort vote avgs by stage name
+            nameSortedVotes = sorted(vote_avgs, key=lambda x: x[0])
+            nameSortedOppVotes = sorted(opp_vote_avgs, key=lambda x: x[0])
+            #context['namevotes'] = nameSortedVotes
+            #context['oppnamevotes'] = nameSortedOppVotes
+
+            # for loop to get score differentials and individual scores for each stage
+            matchup_scores = []
+            for vote, oppvote in zip(nameSortedVotes, nameSortedOppVotes):
+                score = vote[1]
+                opp_score = oppvote[1]
+                stage_name = vote[0]
+                stage_img = vote[2]
+
+                # need to check for empty values
+                if score and opp_score:
+                    score_diff = score - opp_score
+                elif score is None and opp_score is None:
+                    score_diff = None
+                elif opp_score is None:
+                    score_diff = score
+                else: # no score
+                    score_diff = -opp_score
+                    
+                matchup_scores.append([score, opp_score, stage_name, stage_img, score_diff])
+
+            # sort stages by differential
+            matchup_scores.sort(key = lambda x: -1 * math.inf if x[4] is None else x[4], reverse=True)
+
+            context['matchupscores'] = matchup_scores
+
+                
+
+
+                
+
         return context

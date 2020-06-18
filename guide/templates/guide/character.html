@@ -20,8 +20,8 @@
     <!-- for debugging
     <p>{{votes}}</p>
      -->
-    <h2 class="text-center" style="font-weight: bold;"> Stage Rankings</h2>
-
+    
+    <h2 class="text-center" style="font-weight: bold; font-size: 35px;">Stage Rankings</h2>
     <div class="container-fluid">
         <div class="row">
             {% for vote in votes %} 
@@ -37,7 +37,7 @@
     </div>
 
 {% else %}
-<p class="text-center">There are no votes yet. Please contribute!</p>
+<p class="text-center">There are no votes yet. Please contribute if you can!</p>
 {% endif %}
 
 {% endblock %}

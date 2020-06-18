@@ -7,20 +7,43 @@
 <h1 style="font-weight: bold;">{{ character.name }} vs. {{ opponentChar.name }}</h1>
 </div>
 
-
-This is a matchup view btw.
-
 <div class="text-center">
 <img src="{% static character.image_link %}" class="img-fluid" alt="character art" style="height:300px;">
 <img src="{% static opponentChar.image_link %}" class="img-fluid" alt="character art" style="height:300px;">
 </div>
 
 <br>
+<!--[score, opp_score, stage_name, stage_img, score_diff])-->
+<!-- Stage Rankings by Matchup Score -->
+{% if matchupscores %}
+    <h2 class="text-center" style="font-weight: bold; font-size: 35px;"> Best Stages for {{character.name}} against {{opponentChar.name}} </h2>
+
+    <div class="container-fluid">
+        <div class="row">
+            {% for score in matchupscores %} 
+                <div class="col-6 col-md-3">
+                    <h4>
+                        <b>#{{forloop.counter}}: {{score.2}} </b><br>
+                        <img src="{% static score.3 %}" alt="stage image"> <br>
+                        Score Differential: {{score.4|floatformat:2}} {% if score.4 is None %} N/A {% endif %} <br>
+                        {{score.0|floatformat:2}} {% if score.0 is None %} No votes {% endif %}
+                        vs.
+                        {{score.1|floatformat:2}} {% if score.1 is None %} No votes {% endif %}
+                    </h4>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+{% else %}
+<p class="text-center">One of the characters has no data. Please contribute if you can!</p>
+{% endif %}
+
+<br>
 
 <!-- Stage Rankings for player character -->
+<h2 class="text-center" style="font-weight: bold; font-size: 35px;"> {{character.name}} Stage Rankings</h2>
 {% if votes %}
-    <h2 class="text-center" style="font-weight: bold;"> {{character.name}} Stage Rankings</h2>
-
     <div class="container-fluid">
         <div class="row">
             {% for vote in votes %} 
@@ -36,15 +59,14 @@ This is a matchup view btw.
     </div>
 
 {% else %}
-<p class="text-center">There are no votes yet. Please contribute!</p>
+<p class="text-center">There are no votes yet. Please contribute if you can!</p>
 {% endif %}
 
 <br>
 
 <!-- Stage Rankings for opponent character -->
+<h2 class="text-center" style="font-weight: bold; font-size: 35px;"> {{opponentChar.name}} Stage Rankings</h2>
 {% if opp_votes %}
-    <h2 class="text-center" style="font-weight: bold;"> {{opponentChar.name}} Stage Rankings</h2>
-
     <div class="container-fluid">
         <div class="row">
             {% for vote in opp_votes %} 
@@ -60,7 +82,7 @@ This is a matchup view btw.
     </div>
 
 {% else %}
-<p class="text-center">There are no votes yet. Please contribute!</p>
+<p class="text-center">There are no votes yet. Please contribute if you can!</p>
 {% endif %}
 
 {% endblock %}
