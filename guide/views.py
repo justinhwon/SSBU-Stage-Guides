@@ -385,7 +385,7 @@ class MatchupInfoView(generic.DetailView):
                 stage_img = vote[2]
 
                 # need to check for empty values
-                if score and opp_score:
+                if score is not None and opp_score is not None:
                     score_diff = score - opp_score
                 elif score is None and opp_score is None:
                     score_diff = None
