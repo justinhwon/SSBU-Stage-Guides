@@ -3,7 +3,7 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
-<h1>Rank the stages for {{character.name}}</h1>
+<h1>Rate the stages for {{character.name}}</h1>
 <h5>Feel free to skip any stages you're not sure about.</h5>
 <div class="container-fluid">
 <form action="{% url 'guide:vote' character.name %}" method="post">
