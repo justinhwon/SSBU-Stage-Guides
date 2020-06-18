@@ -125,11 +125,13 @@ class MatchupsView(generic.TemplateView):
 
 class VoteModelForm(forms.ModelForm):
     VOTEVALUES=[
+         (3, '3: Best'),
          (2, '2: Great'),
          (1, '1: Good'),
          (0, '0: Neutral'),
          (-1, '-1: Bad'),
-         (-2, '-2: Awful'),
+         (-2, '-2: Terrible'),
+         (-3, '-3: Worst'),
          ('', 'N/A')
          ]
     
@@ -150,80 +152,80 @@ class VoteModelForm(forms.ModelForm):
         battlefield = self.cleaned_data['battlefield']
         if not battlefield:
             battlefield = None
-        elif int(battlefield) > 2 or int(battlefield) < -2:
-            raise forms.ValidationError("Only scores between -2 and 2 allowed.")
+        elif int(battlefield) > 3 or int(battlefield) < -3:
+            raise forms.ValidationError("Only scores between -3 and 3 allowed.")
         return battlefield
 
     def clean_final_destination(self):
         final_destination = self.cleaned_data['final_destination']
         if not final_destination:
             final_destination = None
-        elif int(final_destination) > 2 or int(final_destination) < -2:
-            raise forms.ValidationError("Only scores between -2 and 2 allowed.")
+        elif int(final_destination) > 3 or int(final_destination) < -3:
+            raise forms.ValidationError("Only scores between -3 and 3 allowed.")
         return final_destination
     
     def clean_pokemon_stadium(self):
         pokemon_stadium = self.cleaned_data['pokemon_stadium']
         if not pokemon_stadium:
             pokemon_stadium = None
-        elif int(pokemon_stadium) > 2 or int(pokemon_stadium) < -2:
-            raise forms.ValidationError("Only scores between -2 and 2 allowed.")
+        elif int(pokemon_stadium) > 3 or int(pokemon_stadium) < -3:
+            raise forms.ValidationError("Only scores between -3 and 3 allowed.")
         return pokemon_stadium
 
     def clean_smashville(self):
         smashville = self.cleaned_data['smashville']
         if not smashville:
             smashville = None
-        elif int(smashville) > 2 or int(smashville) < -2:
-            raise forms.ValidationError("Only scores between -2 and 2 allowed.")
+        elif int(smashville) > 3 or int(smashville) < -3:
+            raise forms.ValidationError("Only scores between -3 and 3 allowed.")
         return smashville
     
     def clean_town(self):
         town = self.cleaned_data['town']
         if not town:
             town = None
-        elif int(town) > 2 or int(town) < -2:
-            raise forms.ValidationError("Only scores between -2 and 2 allowed.")
+        elif int(town) > 3 or int(town) < -3:
+            raise forms.ValidationError("Only scores between -3 and 3 allowed.")
         return town
 
     def clean_lylat(self):
         lylat = self.cleaned_data['lylat']
         if not lylat:
             lylat = None
-        elif int(lylat) > 2 or int(lylat) < -2:
-            raise forms.ValidationError("Only scores between -2 and 2 allowed.")
+        elif int(lylat) > 3 or int(lylat) < -3:
+            raise forms.ValidationError("Only scores between -3 and 3 allowed.")
         return lylat
 
     def clean_kalos(self):
         kalos = self.cleaned_data['kalos']
         if not kalos:
             kalos = None
-        elif int(kalos) > 2 or int(kalos) < -2:
-            raise forms.ValidationError("Only scores between -2 and 2 allowed.")
+        elif int(kalos) > 3 or int(kalos) < -3:
+            raise forms.ValidationError("Only scores between -3 and 3 allowed.")
         return kalos
 
     def clean_yoshi_story(self):
         yoshi_story = self.cleaned_data['yoshi_story']
         if not yoshi_story:
             yoshi_story = None
-        elif int(yoshi_story) > 2 or int(yoshi_story) < -2:
-            raise forms.ValidationError("Only scores between -2 and 2 allowed.")
+        elif int(yoshi_story) > 3 or int(yoshi_story) < -3:
+            raise forms.ValidationError("Only scores between -3 and 3 allowed.")
         return yoshi_story
 
     def clean_yoshi_island(self):
         yoshi_island = self.cleaned_data['yoshi_island']
         if not yoshi_island:
             yoshi_island = None
-        elif int(yoshi_island) > 2 or int(yoshi_island) < -2:
-            raise forms.ValidationError("Only scores between -2 and 2 allowed.")
+        elif int(yoshi_island) > 3 or int(yoshi_island) < -3:
+            raise forms.ValidationError("Only scores between -3 and 3 allowed.")
         return yoshi_island
 
     def clean_unova(self):
         unova = self.cleaned_data['unova']
         if not unova:
             unova = None
-        elif int(unova) > 2 or int(unova) < -2:
-            raise forms.ValidationError("Only scores between -2 and 2 allowed.")
+        elif int(unova) > 3 or int(unova) < -3:
+            raise forms.ValidationError("Only scores between -3 and 3 allowed.")
         return unova
 
     class Meta:

@@ -16,7 +16,7 @@
 <!--[score, opp_score, stage_name, stage_img, score_diff])-->
 <!-- Stage Rankings by Matchup Score -->
 {% if matchupscores %}
-    <h2 class="text-center" style="font-weight: bold; font-size: 35px;"> Best Stages for {{character.name}} against {{opponentChar.name}} </h2>
+    <h2 class="text-center" style="font-weight: bold; font-size: 35px;"> Ranking Stages for {{character.name}} against {{opponentChar.name}} </h2>
 
     <div class="container-fluid">
         <div class="row">
@@ -36,7 +36,7 @@
     </div>
 
 {% else %}
-<p class="text-center">One of the characters has no data. Please contribute if you can!</p>
+<p class="text-center">One (or both) of the characters has no data. Please contribute if you can!</p>
 {% endif %}
 
 <br>
