@@ -11,7 +11,6 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
-from .settingkeys import *
 from decouple import config
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
