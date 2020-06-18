@@ -12,9 +12,9 @@
 -->
 <br>
 <div class="text-center">
-<form>
+<form action="{% url 'guide:matchupsearch' %}" method="get">
   <label for="Your Character">Enter your character:</label>
-  <input list="Your Character" name="Your Character" placeholder="Character name" required>
+  <input list="Your Character" name="Your Character" placeholder="Enter character name" required>
   <datalist id="Your Character">
     <option value="Banjo & Kazooie"> 
       <option value="Bayonetta"> 
@@ -103,8 +103,8 @@
 
   <br><br>
 
-  <label for="Your Character">Enter opponent's character:</label>
-  <input list="Opponent Character" name="Opponent Character" placeholder="Character name" required>
+  <label for="Opponent Character">Enter opponent's character:</label>
+  <input list="Opponent Character" name="Opponent Character" placeholder="Enter character name" required>
   <datalist id="Opponent Character">
     <option value="Banjo & Kazooie"> 
       <option value="Bayonetta"> 

@@ -4,15 +4,15 @@
 {% block content %}
 
 <div class="text-center">
-<h1 style="font-weight: bold;">{{ character.name }}</h1>
+<h1 style="font-weight: bold;">{{ character.name }} vs. {{ opponentChar.name }}</h1>
 </div>
+
+
+This is a matchup view btw.
 
 <div class="text-center">
 <img src="{% static character.image_link %}" class="img-fluid" alt="character art" style="height:300px;">
-</div>
-
-<div class="text-center">
-<a href="{% url 'guide:vote' character.name %}" class="btn btn-primary">Vote on Stages</a>
+<img src="{% static opponentChar.image_link %}" class="img-fluid" alt="character art" style="height:300px;">
 </div>
 
 {% if votes %}

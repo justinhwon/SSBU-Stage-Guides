@@ -13,6 +13,7 @@ import math
 
 from .models import Character, Vote
 
+# the homepage
 class HomepageView(generic.ListView):
     template_name = 'guide/homepage.html'
     context_object_name = 'character_list'
@@ -64,6 +65,7 @@ def varToName(d):
         mappedDict.append(temp)
     return mappedDict
 
+# displays stage rankings for a character
 class CharacterView(generic.DetailView):
     model = Character
     template_name = 'guide/character.html'
@@ -109,21 +111,17 @@ class CharacterView(generic.DetailView):
             context['num_votes'] = len(votes)
         return context
 
+# static page - contact information
 class ContactView(generic.TemplateView):
     template_name = 'guide/contact.html'
 
+# static page - info about the site
 class AboutView(generic.TemplateView):
     template_name = 'guide/about.html'
 
-class MatchupsView(generic.ListView):
+# search page/form for matchups
+class MatchupsView(generic.TemplateView):
     template_name = 'guide/matchups.html'
-    context_object_name = 'character_list'
-
-    def get_queryset(self):
-        """
-        Return all characters ordered alphabetically.
-        """
-        return Character.objects.order_by('name')
 
 class VoteModelForm(forms.ModelForm):
     VOTEVALUES=[
@@ -253,15 +251,114 @@ class VoteView(generic.CreateView):
         context['character'] = get_object_or_404(Character, pk=self.kwargs['charactername'])
         return context
 
-
+# redirects to character view using searchform info
 def SearchView(request):
     try:
         characterObject = Character.objects.get(pk=request.GET['Character'])
     except (KeyError, Character.DoesNotExist):
         # Redisplay the question voting form.
-        raise Http404("Character name does not exist.")
+        raise Http404("Character name does not exist. Please choose a name from the dropdown.")
     else:
         # Always return an HttpResponseRedirect after successfully dealing
         # with POST data. This prevents data from being posted twice if a
         # user hits the Back button.
         return HttpResponseRedirect(reverse('guide:character', args=(request.GET['Character'],)))
+
+# used by form from matchups search to redirect to matchup page
+def MatchupSearchView(request):
+    try:
+        yourCharObject = Character.objects.get(pk=request.GET['Your Character'])
+        oppCharObject = Character.objects.get(pk=request.GET['Opponent Character'])
+    except (KeyError, Character.DoesNotExist):
+        # Redisplay the question voting form.
+        raise Http404("Character name does not exist. Please choose a name from the dropdown.")
+    else:
+        # Always return an HttpResponseRedirect after successfully dealing
+        # with POST data. This prevents data from being posted twice if a
+        # user hits the Back button.
+        return HttpResponseRedirect(reverse('guide:matchupinfo', args=(request.GET['Your Character'], request.GET['Opponent Character'])))
+
+# displays the actual matchup info
+class MatchupInfoView(generic.DetailView):
+    model = Character
+    template_name = 'guide/matchupinfo.html'
+
+    def get_context_data(self, **kwargs):
+        # Call the base implementation first to get a context
+        context = super().get_context_data(**kwargs)
+
+        # add opponent character to context
+        context['opponentChar'] = get_object_or_404(Character, pk=self.kwargs['opponentChar'])
+
+        # Process the votes for player character into a list then add to context
+        character = context['character']
+        votes = character.vote_set.all()
+        
+        # if no votes, empty list
+        if not votes:
+            context['votes'] = []
+            context['num_votes'] = 0
+        # otherwise get average score and order list
+        else:
+            # get average score of each stage
+            vote_avgs_dict = votes.aggregate(Avg('battlefield'), Avg('final_destination'), Avg('pokemon_stadium'),
+                Avg('smashville'), Avg('town'), Avg('lylat'), Avg('kalos'), Avg('yoshi_story'), 
+                Avg('yoshi_island'), Avg('unova'))
+
+            # convert to list of form (stage_name, score)
+            vote_avgs = varToName(vote_avgs_dict)
+
+            
+
+            # sort stage by avg score
+            #vote_avgs.sort(key = lambda x: x[1], reverse=True)
+            vote_avgs.sort(key = lambda x: -1 * math.inf if x[1] is None else x[1], reverse=True)
+
+            # considered changing Nones to 0s, changed mind
+            """
+            # convert Nones to 0's
+            for x in vote_avgs:
+                if x[1] is None:
+                    x[1] = 0
+            """
+
+            
+            # set context
+            context['votes'] = vote_avgs
+            context['num_votes'] = len(votes)
+
+        # Process the votes for opponent character into a list then add to context
+        opponent = context['opponentChar']
+        opp_votes = character.vote_set.all()
+        
+        # if no votes, empty list
+        if not opp_votes:
+            context['opp_votes'] = []
+            context['num_opp_votes'] = 0
+        # otherwise get average score and order list
+        else:
+            # get average score of each stage
+            opp_vote_avgs_dict = opp_votes.aggregate(Avg('battlefield'), Avg('final_destination'), Avg('pokemon_stadium'),
+                Avg('smashville'), Avg('town'), Avg('lylat'), Avg('kalos'), Avg('yoshi_story'), 
+                Avg('yoshi_island'), Avg('unova'))
+
+            # convert to list of form (stage_name, score)
+            opp_vote_avgs = varToName(opp_vote_avgs_dict)
+
+            # sort stage by avg score
+            #vote_avgs.sort(key = lambda x: x[1], reverse=True)
+            opp_vote_avgs.sort(key = lambda x: -1 * math.inf if x[1] is None else x[1], reverse=True)
+
+            # considered changing Nones to 0s, changed mind
+            """
+            # convert Nones to 0's
+            for x in vote_avgs:
+                if x[1] is None:
+                    x[1] = 0
+            """
+
+            
+            # set context
+            context['opp_votes'] = opp_vote_avgs
+            context['num_opp_votes'] = len(opp_votes)
+        return context
