@@ -329,7 +329,7 @@ class MatchupInfoView(generic.DetailView):
 
         # Process the votes for opponent character into a list then add to context
         opponent = context['opponentChar']
-        opp_votes = character.vote_set.all()
+        opp_votes = opponent.vote_set.all()
         
         # if no votes, empty list
         if not opp_votes:

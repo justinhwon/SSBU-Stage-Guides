@@ -15,16 +15,39 @@ This is a matchup view btw.
 <img src="{% static opponentChar.image_link %}" class="img-fluid" alt="character art" style="height:300px;">
 </div>
 
+<br>
+
+<!-- Stage Rankings for player character -->
 {% if votes %}
-    <p class="text-center">Total votes: {{ num_votes }}</p>
-    <!-- for debugging
-    <p>{{votes}}</p>
-     -->
-    <h2 class="text-center" style="font-weight: bold;"> Best Stages Ranking</h2>
+    <h2 class="text-center" style="font-weight: bold;"> {{character.name}} Stage Rankings</h2>
 
     <div class="container-fluid">
         <div class="row">
             {% for vote in votes %} 
+                <div class="col-6 col-md-3">
+                    <h4>
+                        <b>#{{forloop.counter}}: {{vote.0}} </b><br>
+                        <img src="{% static vote.2 %}" alt="stage image"> <br>
+                        Score: {{vote.1|floatformat:2}} {% if vote.1 is None %} No votes. {% endif %}
+                    </h4>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+{% else %}
+<p class="text-center">There are no votes yet. Please contribute!</p>
+{% endif %}
+
+<br>
+
+<!-- Stage Rankings for opponent character -->
+{% if opp_votes %}
+    <h2 class="text-center" style="font-weight: bold;"> {{opponentChar.name}} Stage Rankings</h2>
+
+    <div class="container-fluid">
+        <div class="row">
+            {% for vote in opp_votes %} 
                 <div class="col-6 col-md-3">
                     <h4>
                         <b>#{{forloop.counter}}: {{vote.0}} </b><br>
