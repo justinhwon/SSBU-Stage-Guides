@@ -14,4 +14,7 @@ urlpatterns = [
     path('search', views.SearchView, name='search'),
     path('<str:pk>/', views.CharacterView.as_view(), name='character'),
     path('<str:charactername>/vote/', views.VoteView.as_view(), name='vote'),
+    path('privacypolicy', views.PrivacyView.as_view(), name='privacy'),
+    path('termsandconditions', views.TermsView.as_view(), name='terms'),
+    path('cookiepolicy', views.CookieView.as_view(), name='cookie'),
 ]

@@ -24,6 +24,15 @@ class HomepageView(generic.ListView):
         """
         return Character.objects.order_by('name')
 
+class PrivacyView(generic.TemplateView):
+    template_name = 'guide/privacypolicy.html'
+
+class CookieView(generic.TemplateView):
+    template_name = 'guide/cookiepolicy.html'
+
+class TermsView(generic.TemplateView):
+    template_name = 'guide/termsconditions.html'
+
 
 # helper function for CharacterView to map variable names to readable names
 def varToName(d):

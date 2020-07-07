@@ -12,6 +12,21 @@
     <!-- own stylesheet -->
     <link rel="stylesheet" type="text/css" href="{% static 'guide/style.css' %}">
 
+
+    <!-- Cookie banner -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.wpcc.io/lib/1.0.2/cookieconsent.min.css"/><script src="https://cdn.wpcc.io/lib/1.0.2/cookieconsent.min.js"></script><script>window.addEventListener("load", function(){window.wpcc.init({"border":"thin","corners":"small","colors":{"popup":{"background":"#fff0ca","text":"#000000","border":"#e0bc57"},"button":{"background":"#e0bc57","text":"#ffffff"}},"position":"bottom-right","content":{"href":"{% url 'guide:cookie' %}"}})});</script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-170900949-2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-170900949-2');
+    </script>
+
+
     {% block metadata %}
     
     {% endblock %}
@@ -90,6 +105,7 @@
                 <option value="Mii Brawler"> 
                 <option value="Mii Gunner"> 
                 <option value="Mii Swordfighter"> 
+                <option value="Min Min"> 
                 <option value="Mr. Game & Watch"> 
                 <option value="Ness"> 
                 <option value="Olimar"> 

@@ -63,6 +63,7 @@
               <option value="Mii Brawler"> 
               <option value="Mii Gunner"> 
               <option value="Mii Swordfighter"> 
+              <option value="Min Min"> 
               <option value="Mr. Game & Watch"> 
               <option value="Ness"> 
               <option value="Olimar"> 
@@ -163,6 +164,16 @@
     {% else %}
         <p>No characters at this time.</p>
     {% endif %}
+
+
+    <footer class="footer">
+      <div class="container-fluid text-center text-md-right">
+      
+        <a href="{% url 'guide:cookie' %}">Cookie Policy</a> &middot;
+        <a href="{% url 'guide:privacy' %}">Privacy Policy</a> &middot;
+        <a href="{% url 'guide:terms' %}">Terms & Conditions</a>
+      
+    </div>
 
 {% endblock %}
 
