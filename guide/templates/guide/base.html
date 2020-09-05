@@ -12,6 +12,9 @@
     <!-- own stylesheet -->
     <link rel="stylesheet" type="text/css" href="{% static 'guide/style.css' %}">
 
+    <!-- Latest compiled and minified CSS for bootstrap-select -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/css/bootstrap-select.min.css">
+
 
     <!-- Cookie banner -->
     <link rel="stylesheet" type="text/css" href="https://cdn.wpcc.io/lib/1.0.2/cookieconsent.min.css"/><script src="https://cdn.wpcc.io/lib/1.0.2/cookieconsent.min.js"></script><script>window.addEventListener("load", function(){window.wpcc.init({"border":"thin","corners":"small","colors":{"popup":{"background":"#fff0ca","text":"#000000","border":"#e0bc57"},"button":{"background":"#e0bc57","text":"#ffffff"}},"position":"bottom-right","content":{"href":"{% url 'guide:cookie' %}"}})});</script>
@@ -55,123 +58,96 @@
             </li>
           </ul>
           <form class="form-inline my-2 my-lg-0" action="{% url 'guide:search' %}" method="get">
-            <input list="Character" name="Character" placeholder="Search character name" required>
-            <datalist id="Character">
-                <option value="Banjo & Kazooie"> 
-                <option value="Bayonetta"> 
-                <option value="Bowser"> 
-                <option value="Bowser Jr."> 
-                <option value="Byleth"> 
-                <option value="Captain Falcon"> 
-                <option value="Charizard"> 
-                <option value="Chrom"> 
-                <option value="Cloud"> 
-                <option value="Corrin"> 
-                <option value="Daisy"> 
-                <option value="Dark Pit"> 
-                <option value="Dark Samus"> 
-                <option value="Diddy Kong"> 
-                <option value="Donkey Kong"> 
-                <option value="Dr. Mario"> 
-                <option value="Duck Hunt"> 
-                <option value="Falco"> 
-                <option value="Fox"> 
-                <option value="Ganondorf"> 
-                <option value="Greninja"> 
-                <option value="Hero"> 
-                <option value="Ice Climbers"> 
-                <option value="Ike"> 
-                <option value="Incineroar"> 
-                <option value="Inkling"> 
-                <option value="Isabelle"> 
-                <option value="Ivysaur"> 
-                <option value="Jigglypuff"> 
-                <option value="Joker"> 
-                <option value="Ken"> 
-                <option value="King Dedede"> 
-                <option value="King K. Rool"> 
-                <option value="Kirby"> 
-                <option value="Link"> 
-                <option value="Little Mac"> 
-                <option value="Lucario"> 
-                <option value="Lucas"> 
-                <option value="Lucina"> 
-                <option value="Luigi"> 
-                <option value="Mario"> 
-                <option value="Marth"> 
-                <option value="Mega Man"> 
-                <option value="Meta Knight"> 
-                <option value="Mewtwo"> 
-                <option value="Mii Brawler"> 
-                <option value="Mii Gunner"> 
-                <option value="Mii Swordfighter"> 
-                <option value="Min Min"> 
-                <option value="Mr. Game & Watch"> 
-                <option value="Ness"> 
-                <option value="Olimar"> 
-                <option value="Pac-Man"> 
-                <option value="Palutena"> 
-                <option value="Peach"> 
-                <option value="Pichu"> 
-                <option value="Pikachu"> 
-                <option value="Piranha Plant"> 
-                <option value="Pit"> 
-                <option value="Pokémon Trainer">Pokemon Trainer</option> 
-                <option value="Richter"> 
-                <option value="Ridley"> 
-                <option value="R.O.B."> 
-                <option value="Robin"> 
-                <option value="Rosalina & Luma"> 
-                <option value="Roy"> 
-                <option value="Ryu"> 
-                <option value="Samus"> 
-                <option value="Sheik"> 
-                <option value="Shulk"> 
-                <option value="Simon"> 
-                <option value="Snake"> 
-                <option value="Sonic"> 
-                <option value="Squirtle"> 
-                <option value="Terry"> 
-                <option value="Toon Link"> 
-                <option value="Villager"> 
-                <option value="Wario"> 
-                <option value="Wii Fit Trainer"> 
-                <option value="Wolf"> 
-                <option value="Yoshi"> 
-                <option value="Young Link"> 
-                <option value="Zelda"> 
-                <option value="Zero Suit Samus">  
-            </datalist>
+            <select class="selectpicker" data-live-search="true" data-live-search-style="startsWith" id="Character" name="Character" title="Search character name..." required>
+              <option value="Banjo & Kazooie">Banjo & Kazooie</option> 
+              <option value="Bayonetta">Bayonetta</option> 
+              <option value="Bowser">Bowser</option> 
+              <option value="Bowser Jr." data-tokens="Jr.">Bowser Jr.</option> 
+              <option value="Byleth">Byleth</option> 
+              <option value="Captain Falcon">Captain Falcon</option> 
+              <option value="Charizard">Charizard</option> 
+              <option value="Chrom">Chrom</option> 
+              <option value="Cloud">Cloud</option> 
+              <option value="Corrin">Corrin</option> 
+              <option value="Daisy">Daisy</option> 
+              <option value="Dark Pit">Dark Pit</option> 
+              <option value="Dark Samus">Dark Samus</option> 
+              <option value="Diddy Kong">Diddy Kong</option> 
+              <option value="Donkey Kong">Donkey Kong</option> 
+              <option value="Dr. Mario" data-tokens="Doctor">Dr. Mario</option> 
+              <option value="Duck Hunt">Duck Hunt</option> 
+              <option value="Falco">Falco</option> 
+              <option value="Fox">Fox</option> 
+              <option value="Ganondorf">Ganondorf</option> 
+              <option value="Greninja">Greninja</option> 
+              <option value="Hero">Hero</option> 
+              <option value="Ice Climbers" data-tokens="Climbers">Ice Climbers</option> 
+              <option value="Ike">Ike</option> 
+              <option value="Incineroar">Incineroar</option> 
+              <option value="Inkling">Inkling</option> 
+              <option value="Isabelle">Isabelle</option> 
+              <option value="Ivysaur">Ivysaur</option> 
+              <option value="Jigglypuff">Jigglypuff</option> 
+              <option value="Joker">Joker</option> 
+              <option value="Ken">Ken</option> 
+              <option value="King Dedede" data-tokens="Dedede">King Dedede</option> 
+              <option value="King K. Rool" data-tokens="K Rool">King K. Rool</option> 
+              <option value="Kirby">Kirby</option> 
+              <option value="Link">Link</option> 
+              <option value="Little Mac">Little Mac</option> 
+              <option value="Lucario">Lucario</option> 
+              <option value="Lucas">Lucas</option> 
+              <option value="Lucina">Lucina</option> 
+              <option value="Luigi">Luigi</option> 
+              <option value="Mario">Mario</option> 
+              <option value="Marth">Marth</option> 
+              <option value="Mega Man">Mega Man</option> 
+              <option value="Meta Knight">Meta Knight</option> 
+              <option value="Mewtwo">Mewtwo</option> 
+              <option value="Mii Brawler" data-tokens="Brawler">Mii Brawler</option> 
+              <option value="Mii Gunner" data-tokens="Gunner">Mii Gunner</option> 
+              <option value="Mii Swordfighter" data-tokens="Swordfighter">Mii Swordfighter</option> 
+              <option value="Mr. Game & Watch" data-tokens="Game & Watch">Mr. Game & Watch</option> 
+              <option value="Ness">Ness</option> 
+              <option value="Olimar">Olimar</option> 
+              <option value="Pac-Man">Pac-Man</option> 
+              <option value="Palutena">Palutena</option> 
+              <option value="Peach">Peach</option> 
+              <option value="Pichu">Pichu</option> 
+              <option value="Pikachu">Pikachu</option> 
+              <option value="Piranha Plant" data-tokens="Plant">Piranha Plant</option> 
+              <option value="Pit">Pit</option> 
+              <option value="Pokémon Trainer" data-tokens="Pokemon Trainer">Pokémon Trainer</option> 
+              <option value="Richter">Richter</option> 
+              <option value="Ridley">Ridley</option> 
+              <option value="R.O.B." data-tokens="ROB">R.O.B.</option> 
+              <option value="Robin">Robin</option> 
+              <option value="Rosalina & Luma">Rosalina & Luma</option> 
+              <option value="Roy">Roy</option> 
+              <option value="Ryu">Ryu</option> 
+              <option value="Samus">Samus</option> 
+              <option value="Sheik">Sheik</option> 
+              <option value="Shulk">Shulk</option> 
+              <option value="Simon">Simon</option> 
+              <option value="Snake">Snake</option> 
+              <option value="Sonic">Sonic</option> 
+              <option value="Squirtle">Squirtle</option> 
+              <option value="Terry">Terry</option> 
+              <option value="Toon Link">Toon Link</option> 
+              <option value="Villager">Villager</option> 
+              <option value="Wario">Wario</option> 
+              <option value="Wii Fit Trainer">Wii Fit Trainer</option> 
+              <option value="Wolf">Wolf</option> 
+              <option value="Yoshi">Yoshi</option> 
+              <option value="Young Link">Young Link</option> 
+              <option value="Zelda">Zelda</option> 
+              <option value="Zero Suit Samus">Zero Suit Samus</option>
+            </select>
+            &nbsp;
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
           </form>
         </div>
     </nav>
-
-    <script>
-      // Find all inputs on the DOM which are bound to a datalist via their list attribute.
-      var inputs = document.querySelectorAll('input[list]');
-      for (var i = 0; i < inputs.length; i++) {
-        // When the value of the input changes...
-        inputs[i].addEventListener('change', function() {
-          var optionFound = false,
-            datalist = this.list;
-          // Determine whether an option exists with the current value of the input.
-          for (var j = 0; j < datalist.options.length; j++) {
-              if (this.value == datalist.options[j].value) {
-                  optionFound = true;
-                  break;
-              }
-          }
-          // use the setCustomValidity function of the Validation API
-          // to provide an user feedback if the value does not exist in the datalist
-          if (optionFound) {
-            this.setCustomValidity('');
-          } else {
-            this.setCustomValidity('Please select a valid value.');
-          }
-        });
-      }
-    </script>
 
     {% block content %}
     
@@ -188,5 +164,10 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <!-- Latest compiled and minified JavaScript for bootstrap-select -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/js/bootstrap-select.min.js"></script>
+    <!-- (Optional) Latest compiled and minified JavaScript translation files for bootstrap-select -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/js/i18n/defaults-*.min.js"></script>
   </body>
 </html>
