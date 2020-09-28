@@ -27,7 +27,21 @@
                 <div class="col-6 col-md-3">
                     <h4>
                         <b>#{{forloop.counter}}: {{vote.0}} </b><br>
-                        <img src="{% static vote.2 %}" alt="stage image"> <br>
+                        <img id="{{forloop.counter}}" src="{{vote.2}}" alt="stage image" class="rounded border border-dark" style="border-width:2px !important;" onclick="greyOutFxn{{forloop.counter}}()" width="150" height="84">
+                        <script>
+                            function greyOutFxn{{forloop.counter}}(){
+                                var stage = document.getElementById('{{forloop.counter}}');
+                                if (stage.style.filter != "grayscale(100%)") {
+                                    stage.style.filter = "grayscale(100%)";
+                                    //stage.style.className = "rounded border border-danger";
+                                }
+                                else{
+                                    stage.style.filter = "none";
+                                    //stage.style.className = "rounded border border-secondary";
+                                }
+                            }
+                        </script>
+                        <br>
                         Score: {{vote.1|floatformat:2}} {% if vote.1 is None %} No votes. {% endif %}
                     </h4>
                 </div>

@@ -42,34 +42,44 @@ def varToName(d):
         # map to readable names
         if key == 'battlefield__avg':
             key = 'Battlefield'
-            img = 'guide/stage_images/' + 'battlefield.png'
+            #img = 'guide/stage_images/' + 'battlefield.png'
+            img = "https://www.ssbwiki.com/images/thumb/8/86/SSBU-Battlefield.png/300px-SSBU-Battlefield.png"
         elif key == 'final_destination__avg':
             key = 'Final Destination'
-            img = 'guide/stage_images/' + 'final_destination.jpg'
+            #img = 'guide/stage_images/' + 'final_destination.jpg'
+            img = "https://www.ssbwiki.com/images/thumb/9/91/SSBU-Final_Destination.jpg/300px-SSBU-Final_Destination.jpg"
         elif key == 'pokemon_stadium__avg':
             key = 'Pokémon Stadium 2'
-            img = 'guide/stage_images/' + 'pokemon_stadium.png'
+            #img = 'guide/stage_images/' + 'pokemon_stadium.png'
+            img = "https://www.ssbwiki.com/images/thumb/7/73/SSBU-Pok%C3%A9mon_Stadium_2.png/300px-SSBU-Pok%C3%A9mon_Stadium_2.png"
         elif key == 'smashville__avg':
             key = 'Smashville'
-            img = 'guide/stage_images/' + 'smashville.png'
+            #img = 'guide/stage_images/' + 'smashville.png'
+            img = "https://www.ssbwiki.com/images/thumb/0/02/SSBU-Smashville.png/300px-SSBU-Smashville.png"
         elif key == 'lylat__avg':
             key = 'Lylat Cruise'
-            img = 'guide/stage_images/' + 'lylat.jpg'
+            #img = 'guide/stage_images/' + 'lylat.jpg'
+            img = "https://www.ssbwiki.com/images/thumb/5/5f/SSBU-Lylat_Cruise.jpg/300px-SSBU-Lylat_Cruise.jpg"
         elif key == 'town__avg':
             key = 'Town and City'
-            img = 'guide/stage_images/' + 'town.png'
+            #img = 'guide/stage_images/' + 'town.png'
+            img = "https://www.ssbwiki.com/images/thumb/2/26/SSBU-Town_and_City.png/300px-SSBU-Town_and_City.png"
         elif key == 'kalos__avg':
             key = 'Kalos Pokémon League'
-            img = 'guide/stage_images/' + 'kalos.png'
+            #img = 'guide/stage_images/' + 'kalos.png'
+            img = "https://www.ssbwiki.com/images/thumb/b/bf/SSBU-Kalos_Pok%C3%A9mon_League.png/300px-SSBU-Kalos_Pok%C3%A9mon_League.png"
         elif key == 'yoshi_story__avg':
             key = "Yoshi's Story"
-            img = 'guide/stage_images/' + 'yoshi_story.png'
+            #img = 'guide/stage_images/' + 'yoshi_story.png'
+            img = "https://www.ssbwiki.com/images/thumb/0/0c/SSBU-Yoshi%27s_Story.png/300px-SSBU-Yoshi%27s_Story.png"
         elif key == 'yoshi_island__avg':
             key = "Yoshi's Island"
-            img = 'guide/stage_images/' + 'yoshi_island.png'
+            #img = 'guide/stage_images/' + 'yoshi_island.png'
+            img = "https://www.ssbwiki.com/images/thumb/7/7b/SSBU-Yoshi%27s_Island_%28SSBB%29.png/300px-SSBU-Yoshi%27s_Island_%28SSBB%29.png"
         elif key == 'unova__avg':
             key = "Unova Pokémon League"
-            img = 'guide/stage_images/' + 'unova.png'
+            #img = 'guide/stage_images/' + 'unova.png'
+            img = "https://www.ssbwiki.com/images/thumb/b/b2/SSBU-Unova_Pok%C3%A9mon_League.png/300px-SSBU-Unova_Pok%C3%A9mon_League.png"
         temp = [key, value, img]
         mappedDict.append(temp)
     return mappedDict

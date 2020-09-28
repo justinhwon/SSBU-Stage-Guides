@@ -24,7 +24,21 @@
                 <div class="col-6 col-md-3">
                     <h4>
                         <b>#{{forloop.counter}}: {{score.2}} </b><br>
-                        <img src="{% static score.3 %}" alt="stage image"> <br>
+                        <img id="{{forloop.counter}}" src="{{score.3}}" alt="stage image" class="rounded border border-dark" style="border-width:2px !important;" onclick="greyOutFxn{{forloop.counter}}()" width="150" height="84">
+                        <script>
+                            function greyOutFxn{{forloop.counter}}(){
+                                var stage = document.getElementById('{{forloop.counter}}');
+                                if (stage.style.filter != "grayscale(100%)") {
+                                    stage.style.filter = "grayscale(100%)";
+                                    //stage.style.className = "rounded border border-danger";
+                                }
+                                else{
+                                    stage.style.filter = "none";
+                                    //stage.style.className = "rounded border border-secondary";
+                                }
+                            }
+                        </script>
+                        <br>
                         Score Differential: {{score.4|floatformat:2}} {% if score.4 is None %} N/A {% endif %} <br>
                         {{score.0|floatformat:2}} {% if score.0 is None %} No votes {% endif %}
                         vs.
@@ -50,7 +64,21 @@
                 <div class="col-6 col-md-3">
                     <h4>
                         <b>#{{forloop.counter}}: {{vote.0}} </b><br>
-                        <img src="{% static vote.2 %}" alt="stage image"> <br>
+                        <img id="player{{forloop.counter}}" src="{{vote.2}}" alt="stage image" class="rounded border border-dark" style="border-width:2px !important;" onclick="greyOutFxnPlayer{{forloop.counter}}()" width="150" height="84">
+                        <script>
+                            function greyOutFxnPlayer{{forloop.counter}}(){
+                                var stage = document.getElementById('player{{forloop.counter}}');
+                                if (stage.style.filter != "grayscale(100%)") {
+                                    stage.style.filter = "grayscale(100%)";
+                                    //stage.style.className = "rounded border border-danger";
+                                }
+                                else{
+                                    stage.style.filter = "none";
+                                    //stage.style.className = "rounded border border-secondary";
+                                }
+                            }
+                        </script>
+                        <br>
                         Score: {{vote.1|floatformat:2}} {% if vote.1 is None %} No votes. {% endif %}
                     </h4>
                 </div>
@@ -73,7 +101,21 @@
                 <div class="col-6 col-md-3">
                     <h4>
                         <b>#{{forloop.counter}}: {{vote.0}} </b><br>
-                        <img src="{% static vote.2 %}" alt="stage image"> <br>
+                        <img id="opponent{{forloop.counter}}" src="{{vote.2}}" alt="stage image" class="rounded border border-dark" style="border-width:2px !important;" onclick="greyOutFxnOpponent{{forloop.counter}}()" width="150" height="84">
+                        <script>
+                            function greyOutFxnOpponent{{forloop.counter}}(){
+                                var stage = document.getElementById('opponent{{forloop.counter}}');
+                                if (stage.style.filter != "grayscale(100%)") {
+                                    stage.style.filter = "grayscale(100%)";
+                                    //stage.style.className = "rounded border border-danger";
+                                }
+                                else{
+                                    stage.style.filter = "none";
+                                    //stage.style.className = "rounded border border-secondary";
+                                }
+                            }
+                        </script>
+                        <br>
                         Score: {{vote.1|floatformat:2}} {% if vote.1 is None %} No votes. {% endif %}
                     </h4>
                 </div>
