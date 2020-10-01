@@ -7,6 +7,7 @@ class Character(models.Model):
     name = models.CharField(max_length=30, primary_key=True)
     number = models.IntegerField()
     image = models.CharField(max_length=30)
+    link = models.CharField(max_length=150, null=True)
 
     def __str__(self):
         """
@@ -34,6 +35,7 @@ class Vote(models.Model):
     battlefield = models.SmallIntegerField(blank=True, null=True)
     final_destination = models.SmallIntegerField(blank=True, null=True)
     pokemon_stadium = models.SmallIntegerField(blank=True, null=True)
+    small_battlefield = models.SmallIntegerField(blank=True, null=True) # added 10/1/20
     smashville = models.SmallIntegerField(blank=True, null=True)
     town = models.SmallIntegerField(blank=True, null=True)
     lylat = models.SmallIntegerField(blank=True, null=True)
@@ -46,6 +48,6 @@ class Vote(models.Model):
         """
         String representation is the character name.
         """
-        return (str(self.character) + str(self.battlefield) + str(self.final_destination) + str(self.pokemon_stadium) + 
+        return (str(self.character) + str(self.battlefield) + str(self.final_destination) + str(self.pokemon_stadium) + str(self.small_battlefield) +
                 str(self.smashville) + str(self.town) + str(self.lylat) + str(self.kalos) + str(self.yoshi_story) + 
                 str(self.yoshi_island) + str(self.unova) )

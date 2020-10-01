@@ -128,7 +128,7 @@
           
           -->
           <div class="card text-center h-100" style="width:100%;">
-          <img src="{% static character.image_link %}" class="card-img-top" alt="character art" style="height:15vh;">
+          <img src="{{character.link}}" class="card-img-top" alt="character art" style="height:15vh;">
             <div class="card-body">
               <h5 class="card-title" style="margin-bottom: 0 !important;">{{ character.name }}</h5>
               <a href="{% url 'guide:character' character.name %}" class="stretched-link"></a>

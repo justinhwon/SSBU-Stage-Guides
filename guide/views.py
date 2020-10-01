@@ -52,6 +52,10 @@ def varToName(d):
             key = 'Pokémon Stadium 2'
             #img = 'guide/stage_images/' + 'pokemon_stadium.png'
             img = "https://www.ssbwiki.com/images/thumb/7/73/SSBU-Pok%C3%A9mon_Stadium_2.png/300px-SSBU-Pok%C3%A9mon_Stadium_2.png"
+        elif key == 'small_battlefield__avg':
+            key = 'Small Battlefield'
+            #img = 'guide/stage_images/' + 'pokemon_stadium.png'
+            img = "https://www.ssbwiki.com/images/thumb/7/7e/SSBU-Small-Battlefield.jpg/300px-SSBU-Small-Battlefield.jpg"
         elif key == 'smashville__avg':
             key = 'Smashville'
             #img = 'guide/stage_images/' + 'smashville.png'
@@ -65,7 +69,7 @@ def varToName(d):
             #img = 'guide/stage_images/' + 'town.png'
             img = "https://www.ssbwiki.com/images/thumb/2/26/SSBU-Town_and_City.png/300px-SSBU-Town_and_City.png"
         elif key == 'kalos__avg':
-            key = 'Kalos Pokémon League'
+            key = 'Kalos'
             #img = 'guide/stage_images/' + 'kalos.png'
             img = "https://www.ssbwiki.com/images/thumb/b/bf/SSBU-Kalos_Pok%C3%A9mon_League.png/300px-SSBU-Kalos_Pok%C3%A9mon_League.png"
         elif key == 'yoshi_story__avg':
@@ -77,7 +81,7 @@ def varToName(d):
             #img = 'guide/stage_images/' + 'yoshi_island.png'
             img = "https://www.ssbwiki.com/images/thumb/7/7b/SSBU-Yoshi%27s_Island_%28SSBB%29.png/300px-SSBU-Yoshi%27s_Island_%28SSBB%29.png"
         elif key == 'unova__avg':
-            key = "Unova Pokémon League"
+            key = "Unova"
             #img = 'guide/stage_images/' + 'unova.png'
             img = "https://www.ssbwiki.com/images/thumb/b/b2/SSBU-Unova_Pok%C3%A9mon_League.png/300px-SSBU-Unova_Pok%C3%A9mon_League.png"
         temp = [key, value, img]
@@ -103,7 +107,7 @@ class CharacterView(generic.DetailView):
         # otherwise get average score and order list
         else:
             # get average score of each stage
-            vote_avgs_dict = votes.aggregate(Avg('battlefield'), Avg('final_destination'), Avg('pokemon_stadium'),
+            vote_avgs_dict = votes.aggregate(Avg('battlefield'), Avg('final_destination'), Avg('pokemon_stadium'), Avg('small_battlefield'),
                 Avg('smashville'), Avg('town'), Avg('lylat'), Avg('kalos'), Avg('yoshi_story'), 
                 Avg('yoshi_island'), Avg('unova'))
 
@@ -154,16 +158,17 @@ class VoteModelForm(forms.ModelForm):
          ('', 'N/A')
          ]
     
-    battlefield = forms.ChoiceField(choices=VOTEVALUES, widget=forms.RadioSelect, required=False)
+    battlefield = forms.ChoiceField(label='Battlefield', choices=VOTEVALUES, widget=forms.RadioSelect, required=False)
     final_destination = forms.ChoiceField(label='Final Destination', choices=VOTEVALUES, widget=forms.RadioSelect, required=False)
     pokemon_stadium = forms.ChoiceField(label='Pokémon Stadium 2', choices=VOTEVALUES, widget=forms.RadioSelect, required=False)
-    smashville = forms.ChoiceField(choices=VOTEVALUES, widget=forms.RadioSelect, required=False)
+    small_battlefield = forms.ChoiceField(label='Small Battlefield', choices=VOTEVALUES, widget=forms.RadioSelect, required=False)
+    smashville = forms.ChoiceField(label='Smashville', choices=VOTEVALUES, widget=forms.RadioSelect, required=False)
     town = forms.ChoiceField(label='Town and City', choices=VOTEVALUES, widget=forms.RadioSelect, required=False)
     lylat = forms.ChoiceField(label='Lylat Cruise', choices=VOTEVALUES, widget=forms.RadioSelect, required=False)
-    kalos = forms.ChoiceField(label='Kalos Pokémon League', choices=VOTEVALUES, widget=forms.RadioSelect, required=False)
+    kalos = forms.ChoiceField(label='Kalos', choices=VOTEVALUES, widget=forms.RadioSelect, required=False)
     yoshi_story = forms.ChoiceField(label="Yoshi's Story", choices=VOTEVALUES, widget=forms.RadioSelect, required=False)
     yoshi_island = forms.ChoiceField(label="Yoshi's Island", choices=VOTEVALUES, widget=forms.RadioSelect, required=False)
-    unova = forms.ChoiceField(label='Unova Pokémon League', choices=VOTEVALUES, widget=forms.RadioSelect, required=False)
+    unova = forms.ChoiceField(label='Unova', choices=VOTEVALUES, widget=forms.RadioSelect, required=False)
     
 
     # make sure scores are between -2 and 2, and that blank strings convert to None
@@ -190,6 +195,14 @@ class VoteModelForm(forms.ModelForm):
         elif int(pokemon_stadium) > 3 or int(pokemon_stadium) < -3:
             raise forms.ValidationError("Only scores between -3 and 3 allowed.")
         return pokemon_stadium
+
+    def clean_small_battlefield(self):
+        small_battlefield = self.cleaned_data['small_battlefield']
+        if not small_battlefield:
+            small_battlefield = None
+        elif int(small_battlefield) > 3 or int(small_battlefield) < -3:
+            raise forms.ValidationError("Only scores between -3 and 3 allowed.")
+        return small_battlefield
 
     def clean_smashville(self):
         smashville = self.cleaned_data['smashville']
@@ -249,7 +262,7 @@ class VoteModelForm(forms.ModelForm):
 
     class Meta:
         model = Vote
-        fields = ['character', 'battlefield', 'final_destination', 'pokemon_stadium', 'smashville',
+        fields = ['character', 'battlefield', 'final_destination', 'pokemon_stadium', 'small_battlefield', 'smashville',
         'town', 'lylat', 'kalos', 'yoshi_story', 'yoshi_island', 'unova']
         widgets = {'character': forms.HiddenInput()}
 
@@ -322,7 +335,7 @@ class MatchupInfoView(generic.DetailView):
         # otherwise get average score and order list
         else:
             # get average score of each stage
-            vote_avgs_dict = votes.aggregate(Avg('battlefield'), Avg('final_destination'), Avg('pokemon_stadium'),
+            vote_avgs_dict = votes.aggregate(Avg('battlefield'), Avg('final_destination'), Avg('pokemon_stadium'), Avg('small_battlefield'),
                 Avg('smashville'), Avg('town'), Avg('lylat'), Avg('kalos'), Avg('yoshi_story'), 
                 Avg('yoshi_island'), Avg('unova'))
 
@@ -359,7 +372,7 @@ class MatchupInfoView(generic.DetailView):
         # otherwise get average score and order list
         else:
             # get average score of each stage
-            opp_vote_avgs_dict = opp_votes.aggregate(Avg('battlefield'), Avg('final_destination'), Avg('pokemon_stadium'),
+            opp_vote_avgs_dict = opp_votes.aggregate(Avg('battlefield'), Avg('final_destination'), Avg('pokemon_stadium'), Avg('small_battlefield'),
                 Avg('smashville'), Avg('town'), Avg('lylat'), Avg('kalos'), Avg('yoshi_story'), 
                 Avg('yoshi_island'), Avg('unova'))
 
