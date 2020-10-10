@@ -12,7 +12,13 @@
 </div>
 
 <div class="text-center">
-<a href="{% url 'guide:vote' character.name %}" class="btn btn-primary">Vote on Stages</a>
+    {% if voted_already %}
+    Thanks for voting!<br>
+    <a href="{% url 'guide:revote' character.name %}" class="btn btn-primary">Revote on Stages</a>
+    {% else %}
+    <a href="{% url 'guide:vote' character.name %}" class="btn btn-primary">Vote on Stages</a>
+    {% endif %}
+
 </div>
 
 {% if votes %}

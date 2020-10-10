@@ -1,4 +1,5 @@
 from django.shortcuts import get_object_or_404, render
+import uuid
 
 # Create your views here.
 from django.http import HttpResponse, HttpResponseRedirect, Http404
@@ -107,6 +108,13 @@ class CharacterView(generic.DetailView):
     def get_context_data(self, **kwargs):
         # Call the base implementation first to get a context
         context = super().get_context_data(**kwargs)
+        # Check cookies to see whether user voted on character or not
+        if str(context['character']) in self.request.session and self.request.session[str(context['character'])] == True:
+            context['voted_already'] = True
+        else:
+            context['voted_already'] = False
+        #for key, value in self.request.session.items():
+        #    print('{} => {}'.format(key, value))
         # Process the votes into a list then add to context
         character = context['character']
         votes = character.vote_set.all()
@@ -180,6 +188,7 @@ class VoteModelForm(forms.ModelForm):
     yoshi_story = forms.ChoiceField(label="Yoshi's Story", choices=VOTEVALUES, widget=forms.RadioSelect, required=False)
     yoshi_island = forms.ChoiceField(label="Yoshi's Island", choices=VOTEVALUES, widget=forms.RadioSelect, required=False)
     unova = forms.ChoiceField(label='Unova', choices=VOTEVALUES, widget=forms.RadioSelect, required=False)
+    sessionid = forms.CharField(label='sessionid', widget=forms.HiddenInput)
     
 
     # make sure scores are between -2 and 2, and that blank strings convert to None
@@ -273,28 +282,64 @@ class VoteModelForm(forms.ModelForm):
 
     class Meta:
         model = Vote
-        fields = ['character', 'battlefield', 'final_destination', 'pokemon_stadium', 'small_battlefield', 'smashville',
+        fields = ['character', 'sessionid', 'battlefield', 'final_destination', 'pokemon_stadium', 'small_battlefield', 'smashville',
         'town', 'lylat', 'kalos', 'yoshi_story', 'yoshi_island', 'unova']
-        widgets = {'character': forms.HiddenInput()}
+        widgets = {'character': forms.HiddenInput(), 'sessionid': forms.HiddenInput()}
 
 
+# creates a new vote for the user
 class VoteView(generic.CreateView):
     template_name = 'guide/vote.html'
     form_class = VoteModelForm
     #success_url = reverse('guide:character')
 
     def get_success_url(self, **kwargs):
+        self.request.session[self.kwargs['charactername']] = True
         return reverse('guide:character', args=[self.kwargs['charactername']])
 
     def get_initial(self, *args, **kwargs):
         initial = super(VoteView, self).get_initial(**kwargs)
         initial['character'] = self.kwargs['charactername']
+
+        # if no session then create it
+        if not self.request.session.session_key:
+            self.request.session.create()
+            # set a uuid instead of session id (since Firefox doesn't seem to accept empty cookies)
+            self.request.session['uuid'] = str(uuid.uuid4().hex)
+        #initial['sessionid'] = str(self.request.session.session_key)[0:32]
+        
+        # if there's no uuid set it
+        if 'uuid' not in self.request.session:
+            self.request.session['uuid'] = str(uuid.uuid4().hex)
+
+        initial['sessionid'] = self.request.session['uuid']
+        #print('session id: ', initial['sessionid'])
+        #print(initial)
+
         return initial
 
     def get_context_data(self, **kwargs):
         context = super(VoteView, self).get_context_data(**kwargs)
         context['character'] = get_object_or_404(Character, pk=self.kwargs['charactername'])
         return context
+
+# updates a vote user already made
+class RevoteView(generic.UpdateView):
+    template_name = 'guide/revote.html'
+    form_class = VoteModelForm
+    context_object_name = 'prevVote'
+
+    def get_context_data(self, **kwargs):
+        context = super(RevoteView, self).get_context_data(**kwargs)
+        context['character'] = get_object_or_404(Character, pk=self.kwargs['charactername'])
+        return context
+    
+    def get_success_url(self, **kwargs):
+        return reverse('guide:character', args=[self.kwargs['charactername']])
+
+    #get object
+    def get_object(self, queryset=None, **kwargs): 
+        return Vote.objects.filter(sessionid=self.request.session['uuid']).filter(character=self.kwargs['charactername']).first()
 
 # redirects to character view using searchform info
 def SearchView(request):

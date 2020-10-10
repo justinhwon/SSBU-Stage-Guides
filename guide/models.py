@@ -29,6 +29,8 @@ class Character(models.Model):
         return 'guide/images/' + self.image
 
 class Vote(models.Model):
+    # session key of user
+    sessionid = models.CharField(max_length=32, blank=True, null=True)
     # date/time submitted
     timestampUpdated = models.DateTimeField('Updated', auto_now=True)
     timestampCreated = models.DateTimeField('Created', auto_now_add=True)

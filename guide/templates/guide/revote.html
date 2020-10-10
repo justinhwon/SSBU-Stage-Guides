@@ -6,7 +6,7 @@
 <h1>Rate the stages for {{character.name}}</h1>
 <h5>Feel free to skip any stages you're not sure about.</h5>
 <div class="container-fluid">
-<form action="{% url 'guide:vote' character.name %}" method="post">
+<form action="{% url 'guide:revote' character.name %}" method="post">
     {% csrf_token %}
 
     {{ form.character|as_crispy_field }}
