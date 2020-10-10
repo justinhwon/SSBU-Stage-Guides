@@ -8,8 +8,14 @@
 </div>
 
 <div class="text-center">
-<img src="{{ character.link }}" class="img-fluid" alt="character art" style="height:250px;">
-<img src="{{ opponentChar.link }}" class="img-fluid" alt="character art" style="height:250px;">
+    <div class="row justify-content-center">
+        
+            <img src="{{ character.link }}" class="img-fluid" alt="character art" style="max-width: 40%;">
+        
+        
+            <img src="{{ opponentChar.link }}" class="img-fluid" alt="character art" style="max-width: 40%;">
+        
+    </div>
 </div>
 
 <br>
@@ -24,7 +30,7 @@
                 <div class="col-6 col-md-3">
                     <h4>
                         <b>#{{forloop.counter}}: {{score.2}} </b><br>
-                        <img id="{{forloop.counter}}" src="{{score.3}}" alt="stage image" class="rounded border border-dark" style="border-width:2px !important;" onclick="greyOutFxn{{forloop.counter}}()" width="150" height="84">
+                        <img id="{{forloop.counter}}" src="{% static score.3 %}" alt="stage image" class="rounded border border-dark" style="border-width:2px !important;" onclick="greyOutFxn{{forloop.counter}}()" width="150" height="84">
                         <script>
                             function greyOutFxn{{forloop.counter}}(){
                                 var stage = document.getElementById('{{forloop.counter}}');
@@ -64,7 +70,7 @@
                 <div class="col-6 col-md-3">
                     <h4>
                         <b>#{{forloop.counter}}: {{vote.0}} </b><br>
-                        <img id="player{{forloop.counter}}" src="{{vote.2}}" alt="stage image" class="rounded border border-dark" style="border-width:2px !important;" onclick="greyOutFxnPlayer{{forloop.counter}}()" width="150" height="84">
+                        <img id="player{{forloop.counter}}" src="{% static vote.2 %}" alt="stage image" class="rounded border border-dark" style="border-width:2px !important;" onclick="greyOutFxnPlayer{{forloop.counter}}()" width="150" height="84">
                         <script>
                             function greyOutFxnPlayer{{forloop.counter}}(){
                                 var stage = document.getElementById('player{{forloop.counter}}');
@@ -79,7 +85,8 @@
                             }
                         </script>
                         <br>
-                        Score: {{vote.1|floatformat:2}} {% if vote.1 is None %} No votes. {% endif %}
+                        Score: {{vote.1|floatformat:2}} {% if vote.1 is None %} No votes. {% endif %}<br>
+                        ({{vote.3}} votes)
                     </h4>
                 </div>
             {% endfor %}
@@ -101,7 +108,7 @@
                 <div class="col-6 col-md-3">
                     <h4>
                         <b>#{{forloop.counter}}: {{vote.0}} </b><br>
-                        <img id="opponent{{forloop.counter}}" src="{{vote.2}}" alt="stage image" class="rounded border border-dark" style="border-width:2px !important;" onclick="greyOutFxnOpponent{{forloop.counter}}()" width="150" height="84">
+                        <img id="opponent{{forloop.counter}}" src="{% static vote.2 %}" alt="stage image" class="rounded border border-dark" style="border-width:2px !important;" onclick="greyOutFxnOpponent{{forloop.counter}}()" width="150" height="84">
                         <script>
                             function greyOutFxnOpponent{{forloop.counter}}(){
                                 var stage = document.getElementById('opponent{{forloop.counter}}');
@@ -116,7 +123,8 @@
                             }
                         </script>
                         <br>
-                        Score: {{vote.1|floatformat:2}} {% if vote.1 is None %} No votes. {% endif %}
+                        Score: {{vote.1|floatformat:2}} {% if vote.1 is None %} No votes. {% endif %}<br>
+                        ({{vote.3}} votes)
                     </h4>
                 </div>
             {% endfor %}

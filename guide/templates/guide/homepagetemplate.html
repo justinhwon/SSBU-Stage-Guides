@@ -1,0 +1,2294 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- own stylesheet -->
+    <link rel="stylesheet" type="text/css" href="https://stageguidesbucket.s3.amazonaws.com/static/guide/style.css">
+
+    <!-- Latest compiled and minified CSS for bootstrap-select -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/css/bootstrap-select.min.css">
+
+
+    <!-- Cookie banner -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.wpcc.io/lib/1.0.2/cookieconsent.min.css"/><script src="https://cdn.wpcc.io/lib/1.0.2/cookieconsent.min.js"></script><script>window.addEventListener("load", function(){window.wpcc.init({"border":"thin","corners":"small","colors":{"popup":{"background":"#fff0ca","text":"#000000","border":"#e0bc57"},"button":{"background":"#e0bc57","text":"#ffffff"}},"position":"bottom-right","content":{"href":"/cookiepolicy"}})});</script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-170900949-2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-170900949-2');
+    </script>
+
+
+    
+<title>SSBU Stage Guides</title>
+<meta name="title" content="SSBU Stage Guides">
+<meta name="description" content="Find the best and worst stages for each character in Smash Ultimate. Get advice for stage picks and bans during competitive play.">
+<meta name="keywords" content="Super Smash Bros. Ultimate, Super Smash Bros. Ultimate stage advice, ssbu, ssbu stage guides, smash ultimate stage guides, Smash Bros. Ultimate stage guides, Smash Bros. Ultimate stage guide, Super Smash Bros. Ultimate matchup, stage rankings, smash ultimate, smash ultimate stages, best stages against, stage bans, worst stages against, stage ban, competitive smash, best stages, worst stages">
+<meta name="robots" content="index, follow">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="language" content="English">
+
+  </head>
+  <body>
+    <!-- Navbar at top of every page -->
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #ffa500;">
+        <a class="navbar-brand" href="/" style=" font-weight: bold;">SSBU Stage Guides</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/matchups">Matchups</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/contact">Contact</a>
+            </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0" action="/search" method="get">
+            <select class="selectpicker" data-live-search="true" data-live-search-style="startsWith" id="Character" name="Character" title="Search character name..." required>
+              <option value="Banjo & Kazooie">Banjo & Kazooie</option>
+              <option value="Bayonetta">Bayonetta</option>
+              <option value="Bowser">Bowser</option>
+              <option value="Bowser Jr." data-tokens="Jr.">Bowser Jr.</option>
+              <option value="Byleth">Byleth</option>
+              <option value="Captain Falcon">Captain Falcon</option>
+              <option value="Charizard">Charizard</option>
+              <option value="Chrom">Chrom</option>
+              <option value="Cloud">Cloud</option>
+              <option value="Corrin">Corrin</option>
+              <option value="Dark Pit">Dark Pit</option>
+              <option value="Diddy Kong">Diddy Kong</option>
+              <option value="Donkey Kong">Donkey Kong</option>
+              <option value="Dr. Mario" data-tokens="Doctor">Dr. Mario</option>
+              <option value="Duck Hunt">Duck Hunt</option>
+              <option value="Falco">Falco</option>
+              <option value="Fox">Fox</option>
+              <option value="Ganondorf">Ganondorf</option>
+              <option value="Greninja">Greninja</option>
+              <option value="Hero">Hero</option>
+              <option value="Ice Climbers" data-tokens="Climbers">Ice Climbers</option>
+              <option value="Ike">Ike</option>
+              <option value="Incineroar">Incineroar</option>
+              <option value="Inkling">Inkling</option>
+              <option value="Isabelle">Isabelle</option>
+              <option value="Ivysaur">Ivysaur</option>
+              <option value="Jigglypuff">Jigglypuff</option>
+              <option value="Joker">Joker</option>
+              <option value="Ken">Ken</option>
+              <option value="King Dedede" data-tokens="Dedede">King Dedede</option>
+              <option value="King K. Rool" data-tokens="K Rool">King K. Rool</option>
+              <option value="Kirby">Kirby</option>
+              <option value="Link">Link</option>
+              <option value="Little Mac">Little Mac</option>
+              <option value="Lucario">Lucario</option>
+              <option value="Lucas">Lucas</option>
+              <option value="Luigi">Luigi</option>
+              <option value="Mario">Mario</option>
+              <option value="Marth (Lucina)" data-tokens="Lucina">Marth (Lucina)</option>
+              <option value="Mega Man">Mega Man</option>
+              <option value="Meta Knight">Meta Knight</option>
+              <option value="Mewtwo">Mewtwo</option>
+              <option value="Mii Brawler" data-tokens="Brawler">Mii Brawler</option>
+              <option value="Mii Gunner" data-tokens="Gunner">Mii Gunner</option>
+              <option value="Mii Swordfighter" data-tokens="Swordfighter">Mii Swordfighter</option>
+              <option value="Min Min">Min Min</option>
+              <option value="Mr. Game & Watch" data-tokens="Game & Watch">Mr. Game & Watch</option>
+              <option value="Ness">Ness</option>
+              <option value="Olimar">Olimar</option>
+              <option value="Pac-Man">Pac-Man</option>
+              <option value="Palutena">Palutena</option>
+              <option value="Peach (Daisy)" data-tokens="Daisy">Peach (Daisy)</option>
+              <option value="Pichu">Pichu</option>
+              <option value="Pikachu">Pikachu</option>
+              <option value="Piranha Plant" data-tokens="Plant">Piranha Plant</option>
+              <option value="Pit">Pit</option>
+              <option value="Pokémon Trainer" data-tokens="Pokemon Trainer">Pokémon Trainer</option>
+              <option value="Ridley">Ridley</option>
+              <option value="R.O.B." data-tokens="ROB">R.O.B.</option>
+              <option value="Robin">Robin</option>
+              <option value="Rosalina & Luma">Rosalina & Luma</option>
+              <option value="Roy">Roy</option>
+              <option value="Ryu">Ryu</option>
+              <option value="Samus (Dark Samus)" data-tokens="Dark Samus">Samus (Dark Samus)</option>
+              <option value="Sheik">Sheik</option>
+              <option value="Shulk">Shulk</option>
+              <option value="Simon (Richter)" data-tokens="Richter">Simon (Richter)</option>
+              <option value="Snake">Snake</option>
+              <option value="Sonic">Sonic</option>
+              <option value="Squirtle">Squirtle</option>
+              <option value="Terry">Terry</option>
+              <option value="Toon Link">Toon Link</option>
+              <option value="Villager">Villager</option>
+              <option value="Wario">Wario</option>
+              <option value="Wii Fit Trainer">Wii Fit Trainer</option>
+              <option value="Wolf">Wolf</option>
+              <option value="Yoshi">Yoshi</option>
+              <option value="Young Link">Young Link</option>
+              <option value="Zelda">Zelda</option>
+              <option value="Zero Suit Samus">Zero Suit Samus</option>
+            </select>
+            &nbsp;
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+        </div>
+    </nav>
+
+    
+<!--Getting character names
+
+&lt;option value="Banjo &amp; Kazooie"&gt;Banjo &amp; Kazooie&lt;/option&gt; <br>
+
+&lt;option value="Bayonetta"&gt;Bayonetta&lt;/option&gt; <br>
+
+&lt;option value="Bowser"&gt;Bowser&lt;/option&gt; <br>
+
+&lt;option value="Bowser Jr."&gt;Bowser Jr.&lt;/option&gt; <br>
+
+&lt;option value="Byleth"&gt;Byleth&lt;/option&gt; <br>
+
+&lt;option value="Captain Falcon"&gt;Captain Falcon&lt;/option&gt; <br>
+
+&lt;option value="Charizard"&gt;Charizard&lt;/option&gt; <br>
+
+&lt;option value="Chrom"&gt;Chrom&lt;/option&gt; <br>
+
+&lt;option value="Cloud"&gt;Cloud&lt;/option&gt; <br>
+
+&lt;option value="Corrin"&gt;Corrin&lt;/option&gt; <br>
+
+&lt;option value="Dark Pit"&gt;Dark Pit&lt;/option&gt; <br>
+
+&lt;option value="Diddy Kong"&gt;Diddy Kong&lt;/option&gt; <br>
+
+&lt;option value="Donkey Kong"&gt;Donkey Kong&lt;/option&gt; <br>
+
+&lt;option value="Dr. Mario"&gt;Dr. Mario&lt;/option&gt; <br>
+
+&lt;option value="Duck Hunt"&gt;Duck Hunt&lt;/option&gt; <br>
+
+&lt;option value="Falco"&gt;Falco&lt;/option&gt; <br>
+
+&lt;option value="Fox"&gt;Fox&lt;/option&gt; <br>
+
+&lt;option value="Ganondorf"&gt;Ganondorf&lt;/option&gt; <br>
+
+&lt;option value="Greninja"&gt;Greninja&lt;/option&gt; <br>
+
+&lt;option value="Hero"&gt;Hero&lt;/option&gt; <br>
+
+&lt;option value="Ice Climbers"&gt;Ice Climbers&lt;/option&gt; <br>
+
+&lt;option value="Ike"&gt;Ike&lt;/option&gt; <br>
+
+&lt;option value="Incineroar"&gt;Incineroar&lt;/option&gt; <br>
+
+&lt;option value="Inkling"&gt;Inkling&lt;/option&gt; <br>
+
+&lt;option value="Isabelle"&gt;Isabelle&lt;/option&gt; <br>
+
+&lt;option value="Ivysaur"&gt;Ivysaur&lt;/option&gt; <br>
+
+&lt;option value="Jigglypuff"&gt;Jigglypuff&lt;/option&gt; <br>
+
+&lt;option value="Joker"&gt;Joker&lt;/option&gt; <br>
+
+&lt;option value="Ken"&gt;Ken&lt;/option&gt; <br>
+
+&lt;option value="King Dedede"&gt;King Dedede&lt;/option&gt; <br>
+
+&lt;option value="King K. Rool"&gt;King K. Rool&lt;/option&gt; <br>
+
+&lt;option value="Kirby"&gt;Kirby&lt;/option&gt; <br>
+
+&lt;option value="Link"&gt;Link&lt;/option&gt; <br>
+
+&lt;option value="Little Mac"&gt;Little Mac&lt;/option&gt; <br>
+
+&lt;option value="Lucario"&gt;Lucario&lt;/option&gt; <br>
+
+&lt;option value="Lucas"&gt;Lucas&lt;/option&gt; <br>
+
+&lt;option value="Luigi"&gt;Luigi&lt;/option&gt; <br>
+
+&lt;option value="Mario"&gt;Mario&lt;/option&gt; <br>
+
+&lt;option value="Marth (Lucina)"&gt;Marth (Lucina)&lt;/option&gt; <br>
+
+&lt;option value="Mega Man"&gt;Mega Man&lt;/option&gt; <br>
+
+&lt;option value="Meta Knight"&gt;Meta Knight&lt;/option&gt; <br>
+
+&lt;option value="Mewtwo"&gt;Mewtwo&lt;/option&gt; <br>
+
+&lt;option value="Mii Brawler"&gt;Mii Brawler&lt;/option&gt; <br>
+
+&lt;option value="Mii Gunner"&gt;Mii Gunner&lt;/option&gt; <br>
+
+&lt;option value="Mii Swordfighter"&gt;Mii Swordfighter&lt;/option&gt; <br>
+
+&lt;option value="Min Min"&gt;Min Min&lt;/option&gt; <br>
+
+&lt;option value="Mr. Game &amp; Watch"&gt;Mr. Game &amp; Watch&lt;/option&gt; <br>
+
+&lt;option value="Ness"&gt;Ness&lt;/option&gt; <br>
+
+&lt;option value="Olimar"&gt;Olimar&lt;/option&gt; <br>
+
+&lt;option value="Pac-Man"&gt;Pac-Man&lt;/option&gt; <br>
+
+&lt;option value="Palutena"&gt;Palutena&lt;/option&gt; <br>
+
+&lt;option value="Peach (Daisy)"&gt;Peach (Daisy)&lt;/option&gt; <br>
+
+&lt;option value="Pichu"&gt;Pichu&lt;/option&gt; <br>
+
+&lt;option value="Pikachu"&gt;Pikachu&lt;/option&gt; <br>
+
+&lt;option value="Piranha Plant"&gt;Piranha Plant&lt;/option&gt; <br>
+
+&lt;option value="Pit"&gt;Pit&lt;/option&gt; <br>
+
+&lt;option value="Pokémon Trainer"&gt;Pokémon Trainer&lt;/option&gt; <br>
+
+&lt;option value="Ridley"&gt;Ridley&lt;/option&gt; <br>
+
+&lt;option value="R.O.B."&gt;R.O.B.&lt;/option&gt; <br>
+
+&lt;option value="Robin"&gt;Robin&lt;/option&gt; <br>
+
+&lt;option value="Rosalina &amp; Luma"&gt;Rosalina &amp; Luma&lt;/option&gt; <br>
+
+&lt;option value="Roy"&gt;Roy&lt;/option&gt; <br>
+
+&lt;option value="Ryu"&gt;Ryu&lt;/option&gt; <br>
+
+&lt;option value="Samus (Dark Samus)"&gt;Samus (Dark Samus)&lt;/option&gt; <br>
+
+&lt;option value="Sheik"&gt;Sheik&lt;/option&gt; <br>
+
+&lt;option value="Shulk"&gt;Shulk&lt;/option&gt; <br>
+
+&lt;option value="Simon (Richter)"&gt;Simon (Richter)&lt;/option&gt; <br>
+
+&lt;option value="Snake"&gt;Snake&lt;/option&gt; <br>
+
+&lt;option value="Sonic"&gt;Sonic&lt;/option&gt; <br>
+
+&lt;option value="Squirtle"&gt;Squirtle&lt;/option&gt; <br>
+
+&lt;option value="Terry"&gt;Terry&lt;/option&gt; <br>
+
+&lt;option value="Toon Link"&gt;Toon Link&lt;/option&gt; <br>
+
+&lt;option value="Villager"&gt;Villager&lt;/option&gt; <br>
+
+&lt;option value="Wario"&gt;Wario&lt;/option&gt; <br>
+
+&lt;option value="Wii Fit Trainer"&gt;Wii Fit Trainer&lt;/option&gt; <br>
+
+&lt;option value="Wolf"&gt;Wolf&lt;/option&gt; <br>
+
+&lt;option value="Yoshi"&gt;Yoshi&lt;/option&gt; <br>
+
+&lt;option value="Young Link"&gt;Young Link&lt;/option&gt; <br>
+
+&lt;option value="Zelda"&gt;Zelda&lt;/option&gt; <br>
+
+&lt;option value="Zero Suit Samus"&gt;Zero Suit Samus&lt;/option&gt; <br>
+
+-->
+
+    <!-- Homepage helper text -->
+    <div class="jumbotron text-center" style="padding-top: 20px; padding-bottom: 5px;">
+        <p>Click button below to get stage info for a specific matchup:</p>
+        <div class="text-center">
+          <a href="/matchups" class="btn btn-primary">Matchups</a>
+        </div>
+        <br>
+        <b>OR</b><br>
+        <p>Click a character below for stage advice:</p>
+        <form class="form" action="/search" method="get">
+          <select class="selectpicker" data-live-search="true" data-live-search-style="startsWith" id="Character" name="Character" title="Search character name..." required>
+            <option value="Banjo & Kazooie">Banjo & Kazooie</option>
+            <option value="Bayonetta">Bayonetta</option>
+            <option value="Bowser">Bowser</option>
+            <option value="Bowser Jr." data-tokens="Jr.">Bowser Jr.</option>
+            <option value="Byleth">Byleth</option>
+            <option value="Captain Falcon">Captain Falcon</option>
+            <option value="Charizard">Charizard</option>
+            <option value="Chrom">Chrom</option>
+            <option value="Cloud">Cloud</option>
+            <option value="Corrin">Corrin</option>
+            <option value="Dark Pit">Dark Pit</option>
+            <option value="Diddy Kong">Diddy Kong</option>
+            <option value="Donkey Kong">Donkey Kong</option>
+            <option value="Dr. Mario" data-tokens="Doctor">Dr. Mario</option>
+            <option value="Duck Hunt">Duck Hunt</option>
+            <option value="Falco">Falco</option>
+            <option value="Fox">Fox</option>
+            <option value="Ganondorf">Ganondorf</option>
+            <option value="Greninja">Greninja</option>
+            <option value="Hero">Hero</option>
+            <option value="Ice Climbers" data-tokens="Climbers">Ice Climbers</option>
+            <option value="Ike">Ike</option>
+            <option value="Incineroar">Incineroar</option>
+            <option value="Inkling">Inkling</option>
+            <option value="Isabelle">Isabelle</option>
+            <option value="Ivysaur">Ivysaur</option>
+            <option value="Jigglypuff">Jigglypuff</option>
+            <option value="Joker">Joker</option>
+            <option value="Ken">Ken</option>
+            <option value="King Dedede" data-tokens="Dedede">King Dedede</option>
+            <option value="King K. Rool" data-tokens="K Rool">King K. Rool</option>
+            <option value="Kirby">Kirby</option>
+            <option value="Link">Link</option>
+            <option value="Little Mac">Little Mac</option>
+            <option value="Lucario">Lucario</option>
+            <option value="Lucas">Lucas</option>
+            <option value="Luigi">Luigi</option>
+            <option value="Mario">Mario</option>
+            <option value="Marth (Lucina)" data-tokens="Lucina">Marth (Lucina)</option>
+            <option value="Mega Man">Mega Man</option>
+            <option value="Meta Knight">Meta Knight</option>
+            <option value="Mewtwo">Mewtwo</option>
+            <option value="Mii Brawler" data-tokens="Brawler">Mii Brawler</option>
+            <option value="Mii Gunner" data-tokens="Gunner">Mii Gunner</option>
+            <option value="Mii Swordfighter" data-tokens="Swordfighter">Mii Swordfighter</option>
+            <option value="Min Min">Min Min</option>
+            <option value="Mr. Game & Watch" data-tokens="Game & Watch">Mr. Game & Watch</option>
+            <option value="Ness">Ness</option>
+            <option value="Olimar">Olimar</option>
+            <option value="Pac-Man">Pac-Man</option>
+            <option value="Palutena">Palutena</option>
+            <option value="Peach (Daisy)" data-tokens="Daisy">Peach (Daisy)</option>
+            <option value="Pichu">Pichu</option>
+            <option value="Pikachu">Pikachu</option>
+            <option value="Piranha Plant" data-tokens="Plant">Piranha Plant</option>
+            <option value="Pit">Pit</option>
+            <option value="Pokémon Trainer" data-tokens="Pokemon Trainer">Pokémon Trainer</option>
+            <option value="Ridley">Ridley</option>
+            <option value="R.O.B." data-tokens="ROB">R.O.B.</option>
+            <option value="Robin">Robin</option>
+            <option value="Rosalina & Luma">Rosalina & Luma</option>
+            <option value="Roy">Roy</option>
+            <option value="Ryu">Ryu</option>
+            <option value="Samus (Dark Samus)" data-tokens="Dark Samus">Samus (Dark Samus)</option>
+            <option value="Sheik">Sheik</option>
+            <option value="Shulk">Shulk</option>
+            <option value="Simon (Richter)" data-tokens="Richter">Simon (Richter)</option>
+            <option value="Snake">Snake</option>
+            <option value="Sonic">Sonic</option>
+            <option value="Squirtle">Squirtle</option>
+            <option value="Terry">Terry</option>
+            <option value="Toon Link">Toon Link</option>
+            <option value="Villager">Villager</option>
+            <option value="Wario">Wario</option>
+            <option value="Wii Fit Trainer">Wii Fit Trainer</option>
+            <option value="Wolf">Wolf</option>
+            <option value="Yoshi">Yoshi</option>
+            <option value="Young Link">Young Link</option>
+            <option value="Zelda">Zelda</option>
+            <option value="Zero Suit Samus">Zero Suit Samus</option>
+          </select>
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+    </div>
+    
+
+    <!-- Code for every character card -->
+    
+    <div class="container">
+        <div class="row">
+        
+        <div class="col-3 col-md-2" style="padding:5px">
+          <!-- attempt to use overlay
+          <div class="card bg-dark text-white">
+            <img class="card-img" src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/banjo_and_kazooie.jpg" alt="Character image">
+            <div class="card-img-overlay">
+              <h5 class="card-title">Banjo &amp; Kazooie</h5>
+            </div>
+          </div>
+
+
+          <div class="card text-center" style="width: 10vw; height: 14vw;">
+          <img src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/banjo_and_kazooie.jpg" class="card-img-top" alt="character art" style="height: 10vw; width: 10vw; max-height:100%; max-width:100%;">
+          
+          -->
+          <div class="card text-center h-100" style="width:100%;">
+          <img src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/banjo_and_kazooie.jpg" class="card-img-top" alt="Banjo &amp; Kazooie" loading="lazy" style="height:15vh;">
+            <div class="card-body">
+              <h5 class="card-title" style="margin-bottom: 0 !important;">Banjo &amp; Kazooie</h5>
+              <a href="/Banjo%20&amp;%20Kazooie/" class="stretched-link"></a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-3 col-md-2" style="padding:5px">
+          <!-- attempt to use overlay
+          <div class="card bg-dark text-white">
+            <img class="card-img" src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/bayonetta.jpg" alt="Character image">
+            <div class="card-img-overlay">
+              <h5 class="card-title">Bayonetta</h5>
+            </div>
+          </div>
+
+
+          <div class="card text-center" style="width: 10vw; height: 14vw;">
+          <img src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/bayonetta.jpg" class="card-img-top" alt="character art" style="height: 10vw; width: 10vw; max-height:100%; max-width:100%;">
+          
+          -->
+          <div class="card text-center h-100" style="width:100%;">
+          <img src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/bayonetta.jpg" class="card-img-top" alt="Bayonetta" loading="lazy" style="height:15vh;">
+            <div class="card-body">
+              <h5 class="card-title" style="margin-bottom: 0 !important;">Bayonetta</h5>
+              <a href="/Bayonetta/" class="stretched-link"></a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-3 col-md-2" style="padding:5px">
+          <!-- attempt to use overlay
+          <div class="card bg-dark text-white">
+            <img class="card-img" src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/bowser.jpg" alt="Character image">
+            <div class="card-img-overlay">
+              <h5 class="card-title">Bowser</h5>
+            </div>
+          </div>
+
+
+          <div class="card text-center" style="width: 10vw; height: 14vw;">
+          <img src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/bowser.jpg" class="card-img-top" alt="character art" style="height: 10vw; width: 10vw; max-height:100%; max-width:100%;">
+          
+          -->
+          <div class="card text-center h-100" style="width:100%;">
+          <img src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/bowser.jpg" class="card-img-top" alt="Bowser" loading="lazy" style="height:15vh;">
+            <div class="card-body">
+              <h5 class="card-title" style="margin-bottom: 0 !important;">Bowser</h5>
+              <a href="/Bowser/" class="stretched-link"></a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-3 col-md-2" style="padding:5px">
+          <!-- attempt to use overlay
+          <div class="card bg-dark text-white">
+            <img class="card-img" src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/bowser_jr.jpg" alt="Character image">
+            <div class="card-img-overlay">
+              <h5 class="card-title">Bowser Jr.</h5>
+            </div>
+          </div>
+
+
+          <div class="card text-center" style="width: 10vw; height: 14vw;">
+          <img src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/bowser_jr.jpg" class="card-img-top" alt="character art" style="height: 10vw; width: 10vw; max-height:100%; max-width:100%;">
+          
+          -->
+          <div class="card text-center h-100" style="width:100%;">
+          <img src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/bowser_jr.jpg" class="card-img-top" alt="Bowser Jr." loading="lazy" style="height:15vh;">
+            <div class="card-body">
+              <h5 class="card-title" style="margin-bottom: 0 !important;">Bowser Jr.</h5>
+              <a href="/Bowser%20Jr./" class="stretched-link"></a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-3 col-md-2" style="padding:5px">
+          <!-- attempt to use overlay
+          <div class="card bg-dark text-white">
+            <img class="card-img" src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/byleth.jpg" alt="Character image">
+            <div class="card-img-overlay">
+              <h5 class="card-title">Byleth</h5>
+            </div>
+          </div>
+
+
+          <div class="card text-center" style="width: 10vw; height: 14vw;">
+          <img src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/byleth.jpg" class="card-img-top" alt="character art" style="height: 10vw; width: 10vw; max-height:100%; max-width:100%;">
+          
+          -->
+          <div class="card text-center h-100" style="width:100%;">
+          <img src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/byleth.jpg" class="card-img-top" alt="Byleth" loading="lazy" style="height:15vh;">
+            <div class="card-body">
+              <h5 class="card-title" style="margin-bottom: 0 !important;">Byleth</h5>
+              <a href="/Byleth/" class="stretched-link"></a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-3 col-md-2" style="padding:5px">
+          <!-- attempt to use overlay
+          <div class="card bg-dark text-white">
+            <img class="card-img" src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/captain_falcon.jpg" alt="Character image">
+            <div class="card-img-overlay">
+              <h5 class="card-title">Captain Falcon</h5>
+            </div>
+          </div>
+
+
+          <div class="card text-center" style="width: 10vw; height: 14vw;">
+          <img src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/captain_falcon.jpg" class="card-img-top" alt="character art" style="height: 10vw; width: 10vw; max-height:100%; max-width:100%;">
+          
+          -->
+          <div class="card text-center h-100" style="width:100%;">
+          <img src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/captain_falcon.jpg" class="card-img-top" alt="Captain Falcon" loading="lazy" style="height:15vh;">
+            <div class="card-body">
+              <h5 class="card-title" style="margin-bottom: 0 !important;">Captain Falcon</h5>
+              <a href="/Captain%20Falcon/" class="stretched-link"></a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-3 col-md-2" style="padding:5px">
+          <!-- attempt to use overlay
+          <div class="card bg-dark text-white">
+            <img class="card-img" src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/charizard.jpg" alt="Character image">
+            <div class="card-img-overlay">
+              <h5 class="card-title">Charizard</h5>
+            </div>
+          </div>
+
+
+          <div class="card text-center" style="width: 10vw; height: 14vw;">
+          <img src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/charizard.jpg" class="card-img-top" alt="character art" style="height: 10vw; width: 10vw; max-height:100%; max-width:100%;">
+          
+          -->
+          <div class="card text-center h-100" style="width:100%;">
+          <img src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/charizard.jpg" class="card-img-top" alt="Charizard" loading="lazy" style="height:15vh;">
+            <div class="card-body">
+              <h5 class="card-title" style="margin-bottom: 0 !important;">Charizard</h5>
+              <a href="/Charizard/" class="stretched-link"></a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-3 col-md-2" style="padding:5px">
+          <!-- attempt to use overlay
+          <div class="card bg-dark text-white">
+            <img class="card-img" src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/chrom.jpg" alt="Character image">
+            <div class="card-img-overlay">
+              <h5 class="card-title">Chrom</h5>
+            </div>
+          </div>
+
+
+          <div class="card text-center" style="width: 10vw; height: 14vw;">
+          <img src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/chrom.jpg" class="card-img-top" alt="character art" style="height: 10vw; width: 10vw; max-height:100%; max-width:100%;">
+          
+          -->
+          <div class="card text-center h-100" style="width:100%;">
+          <img src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/chrom.jpg" class="card-img-top" alt="Chrom" loading="lazy" style="height:15vh;">
+            <div class="card-body">
+              <h5 class="card-title" style="margin-bottom: 0 !important;">Chrom</h5>
+              <a href="/Chrom/" class="stretched-link"></a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-3 col-md-2" style="padding:5px">
+          <!-- attempt to use overlay
+          <div class="card bg-dark text-white">
+            <img class="card-img" src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/cloud.jpg" alt="Character image">
+            <div class="card-img-overlay">
+              <h5 class="card-title">Cloud</h5>
+            </div>
+          </div>
+
+
+          <div class="card text-center" style="width: 10vw; height: 14vw;">
+          <img src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/cloud.jpg" class="card-img-top" alt="character art" style="height: 10vw; width: 10vw; max-height:100%; max-width:100%;">
+          
+          -->
+          <div class="card text-center h-100" style="width:100%;">
+          <img src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/cloud.jpg" class="card-img-top" alt="Cloud" loading="lazy" style="height:15vh;">
+            <div class="card-body">
+              <h5 class="card-title" style="margin-bottom: 0 !important;">Cloud</h5>
+              <a href="/Cloud/" class="stretched-link"></a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-3 col-md-2" style="padding:5px">
+          <!-- attempt to use overlay
+          <div class="card bg-dark text-white">
+            <img class="card-img" src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/corrin.jpg" alt="Character image">
+            <div class="card-img-overlay">
+              <h5 class="card-title">Corrin</h5>
+            </div>
+          </div>
+
+
+          <div class="card text-center" style="width: 10vw; height: 14vw;">
+          <img src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/corrin.jpg" class="card-img-top" alt="character art" style="height: 10vw; width: 10vw; max-height:100%; max-width:100%;">
+          
+          -->
+          <div class="card text-center h-100" style="width:100%;">
+          <img src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/corrin.jpg" class="card-img-top" alt="Corrin" loading="lazy" style="height:15vh;">
+            <div class="card-body">
+              <h5 class="card-title" style="margin-bottom: 0 !important;">Corrin</h5>
+              <a href="/Corrin/" class="stretched-link"></a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-3 col-md-2" style="padding:5px">
+          <!-- attempt to use overlay
+          <div class="card bg-dark text-white">
+            <img class="card-img" src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/dark_pit.jpg" alt="Character image">
+            <div class="card-img-overlay">
+              <h5 class="card-title">Dark Pit</h5>
+            </div>
+          </div>
+
+
+          <div class="card text-center" style="width: 10vw; height: 14vw;">
+          <img src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/dark_pit.jpg" class="card-img-top" alt="character art" style="height: 10vw; width: 10vw; max-height:100%; max-width:100%;">
+          
+          -->
+          <div class="card text-center h-100" style="width:100%;">
+          <img src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/dark_pit.jpg" class="card-img-top" alt="Dark Pit" loading="lazy" style="height:15vh;">
+            <div class="card-body">
+              <h5 class="card-title" style="margin-bottom: 0 !important;">Dark Pit</h5>
+              <a href="/Dark%20Pit/" class="stretched-link"></a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-3 col-md-2" style="padding:5px">
+          <!-- attempt to use overlay
+          <div class="card bg-dark text-white">
+            <img class="card-img" src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/diddy_kong.jpg" alt="Character image">
+            <div class="card-img-overlay">
+              <h5 class="card-title">Diddy Kong</h5>
+            </div>
+          </div>
+
+
+          <div class="card text-center" style="width: 10vw; height: 14vw;">
+          <img src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/diddy_kong.jpg" class="card-img-top" alt="character art" style="height: 10vw; width: 10vw; max-height:100%; max-width:100%;">
+          
+          -->
+          <div class="card text-center h-100" style="width:100%;">
+          <img src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/diddy_kong.jpg" class="card-img-top" alt="Diddy Kong" loading="lazy" style="height:15vh;">
+            <div class="card-body">
+              <h5 class="card-title" style="margin-bottom: 0 !important;">Diddy Kong</h5>
+              <a href="/Diddy%20Kong/" class="stretched-link"></a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-3 col-md-2" style="padding:5px">
+          <!-- attempt to use overlay
+          <div class="card bg-dark text-white">
+            <img class="card-img" src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/donkey_kong.jpg" alt="Character image">
+            <div class="card-img-overlay">
+              <h5 class="card-title">Donkey Kong</h5>
+            </div>
+          </div>
+
+
+          <div class="card text-center" style="width: 10vw; height: 14vw;">
+          <img src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/donkey_kong.jpg" class="card-img-top" alt="character art" style="height: 10vw; width: 10vw; max-height:100%; max-width:100%;">
+          
+          -->
+          <div class="card text-center h-100" style="width:100%;">
+          <img src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/donkey_kong.jpg" class="card-img-top" alt="Donkey Kong" loading="lazy" style="height:15vh;">
+            <div class="card-body">
+              <h5 class="card-title" style="margin-bottom: 0 !important;">Donkey Kong</h5>
+              <a href="/Donkey%20Kong/" class="stretched-link"></a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-3 col-md-2" style="padding:5px">
+          <!-- attempt to use overlay
+          <div class="card bg-dark text-white">
+            <img class="card-img" src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/dr_mario.jpg" alt="Character image">
+            <div class="card-img-overlay">
+              <h5 class="card-title">Dr. Mario</h5>
+            </div>
+          </div>
+
+
+          <div class="card text-center" style="width: 10vw; height: 14vw;">
+          <img src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/dr_mario.jpg" class="card-img-top" alt="character art" style="height: 10vw; width: 10vw; max-height:100%; max-width:100%;">
+          
+          -->
+          <div class="card text-center h-100" style="width:100%;">
+          <img src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/dr_mario.jpg" class="card-img-top" alt="Dr. Mario" loading="lazy" style="height:15vh;">
+            <div class="card-body">
+              <h5 class="card-title" style="margin-bottom: 0 !important;">Dr. Mario</h5>
+              <a href="/Dr.%20Mario/" class="stretched-link"></a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-3 col-md-2" style="padding:5px">
+          <!-- attempt to use overlay
+          <div class="card bg-dark text-white">
+            <img class="card-img" src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/duck_hunt.jpg" alt="Character image">
+            <div class="card-img-overlay">
+              <h5 class="card-title">Duck Hunt</h5>
+            </div>
+          </div>
+
+
+          <div class="card text-center" style="width: 10vw; height: 14vw;">
+          <img src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/duck_hunt.jpg" class="card-img-top" alt="character art" style="height: 10vw; width: 10vw; max-height:100%; max-width:100%;">
+          
+          -->
+          <div class="card text-center h-100" style="width:100%;">
+          <img src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/duck_hunt.jpg" class="card-img-top" alt="Duck Hunt" loading="lazy" style="height:15vh;">
+            <div class="card-body">
+              <h5 class="card-title" style="margin-bottom: 0 !important;">Duck Hunt</h5>
+              <a href="/Duck%20Hunt/" class="stretched-link"></a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-3 col-md-2" style="padding:5px">
+          <!-- attempt to use overlay
+          <div class="card bg-dark text-white">
+            <img class="card-img" src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/falco.jpg" alt="Character image">
+            <div class="card-img-overlay">
+              <h5 class="card-title">Falco</h5>
+            </div>
+          </div>
+
+
+          <div class="card text-center" style="width: 10vw; height: 14vw;">
+          <img src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/falco.jpg" class="card-img-top" alt="character art" style="height: 10vw; width: 10vw; max-height:100%; max-width:100%;">
+          
+          -->
+          <div class="card text-center h-100" style="width:100%;">
+          <img src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/falco.jpg" class="card-img-top" alt="Falco" loading="lazy" style="height:15vh;">
+            <div class="card-body">
+              <h5 class="card-title" style="margin-bottom: 0 !important;">Falco</h5>
+              <a href="/Falco/" class="stretched-link"></a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-3 col-md-2" style="padding:5px">
+          <!-- attempt to use overlay
+          <div class="card bg-dark text-white">
+            <img class="card-img" src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/fox.jpg" alt="Character image">
+            <div class="card-img-overlay">
+              <h5 class="card-title">Fox</h5>
+            </div>
+          </div>
+
+
+          <div class="card text-center" style="width: 10vw; height: 14vw;">
+          <img src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/fox.jpg" class="card-img-top" alt="character art" style="height: 10vw; width: 10vw; max-height:100%; max-width:100%;">
+          
+          -->
+          <div class="card text-center h-100" style="width:100%;">
+          <img src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/fox.jpg" class="card-img-top" alt="Fox" loading="lazy" style="height:15vh;">
+            <div class="card-body">
+              <h5 class="card-title" style="margin-bottom: 0 !important;">Fox</h5>
+              <a href="/Fox/" class="stretched-link"></a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-3 col-md-2" style="padding:5px">
+          <!-- attempt to use overlay
+          <div class="card bg-dark text-white">
+            <img class="card-img" src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/ganondorf.jpg" alt="Character image">
+            <div class="card-img-overlay">
+              <h5 class="card-title">Ganondorf</h5>
+            </div>
+          </div>
+
+
+          <div class="card text-center" style="width: 10vw; height: 14vw;">
+          <img src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/ganondorf.jpg" class="card-img-top" alt="character art" style="height: 10vw; width: 10vw; max-height:100%; max-width:100%;">
+          
+          -->
+          <div class="card text-center h-100" style="width:100%;">
+          <img src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/ganondorf.jpg" class="card-img-top" alt="Ganondorf" loading="lazy" style="height:15vh;">
+            <div class="card-body">
+              <h5 class="card-title" style="margin-bottom: 0 !important;">Ganondorf</h5>
+              <a href="/Ganondorf/" class="stretched-link"></a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-3 col-md-2" style="padding:5px">
+          <!-- attempt to use overlay
+          <div class="card bg-dark text-white">
+            <img class="card-img" src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/greninja.jpg" alt="Character image">
+            <div class="card-img-overlay">
+              <h5 class="card-title">Greninja</h5>
+            </div>
+          </div>
+
+
+          <div class="card text-center" style="width: 10vw; height: 14vw;">
+          <img src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/greninja.jpg" class="card-img-top" alt="character art" style="height: 10vw; width: 10vw; max-height:100%; max-width:100%;">
+          
+          -->
+          <div class="card text-center h-100" style="width:100%;">
+          <img src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/greninja.jpg" class="card-img-top" alt="Greninja" loading="lazy" style="height:15vh;">
+            <div class="card-body">
+              <h5 class="card-title" style="margin-bottom: 0 !important;">Greninja</h5>
+              <a href="/Greninja/" class="stretched-link"></a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-3 col-md-2" style="padding:5px">
+          <!-- attempt to use overlay
+          <div class="card bg-dark text-white">
+            <img class="card-img" src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/hero.jpg" alt="Character image">
+            <div class="card-img-overlay">
+              <h5 class="card-title">Hero</h5>
+            </div>
+          </div>
+
+
+          <div class="card text-center" style="width: 10vw; height: 14vw;">
+          <img src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/hero.jpg" class="card-img-top" alt="character art" style="height: 10vw; width: 10vw; max-height:100%; max-width:100%;">
+          
+          -->
+          <div class="card text-center h-100" style="width:100%;">
+          <img src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/hero.jpg" class="card-img-top" alt="Hero" loading="lazy" style="height:15vh;">
+            <div class="card-body">
+              <h5 class="card-title" style="margin-bottom: 0 !important;">Hero</h5>
+              <a href="/Hero/" class="stretched-link"></a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-3 col-md-2" style="padding:5px">
+          <!-- attempt to use overlay
+          <div class="card bg-dark text-white">
+            <img class="card-img" src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/ice_climbers.jpg" alt="Character image">
+            <div class="card-img-overlay">
+              <h5 class="card-title">Ice Climbers</h5>
+            </div>
+          </div>
+
+
+          <div class="card text-center" style="width: 10vw; height: 14vw;">
+          <img src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/ice_climbers.jpg" class="card-img-top" alt="character art" style="height: 10vw; width: 10vw; max-height:100%; max-width:100%;">
+          
+          -->
+          <div class="card text-center h-100" style="width:100%;">
+          <img src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/ice_climbers.jpg" class="card-img-top" alt="Ice Climbers" loading="lazy" style="height:15vh;">
+            <div class="card-body">
+              <h5 class="card-title" style="margin-bottom: 0 !important;">Ice Climbers</h5>
+              <a href="/Ice%20Climbers/" class="stretched-link"></a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-3 col-md-2" style="padding:5px">
+          <!-- attempt to use overlay
+          <div class="card bg-dark text-white">
+            <img class="card-img" src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/ike.jpg" alt="Character image">
+            <div class="card-img-overlay">
+              <h5 class="card-title">Ike</h5>
+            </div>
+          </div>
+
+
+          <div class="card text-center" style="width: 10vw; height: 14vw;">
+          <img src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/ike.jpg" class="card-img-top" alt="character art" style="height: 10vw; width: 10vw; max-height:100%; max-width:100%;">
+          
+          -->
+          <div class="card text-center h-100" style="width:100%;">
+          <img src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/ike.jpg" class="card-img-top" alt="Ike" loading="lazy" style="height:15vh;">
+            <div class="card-body">
+              <h5 class="card-title" style="margin-bottom: 0 !important;">Ike</h5>
+              <a href="/Ike/" class="stretched-link"></a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-3 col-md-2" style="padding:5px">
+          <!-- attempt to use overlay
+          <div class="card bg-dark text-white">
+            <img class="card-img" src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/incineroar.jpg" alt="Character image">
+            <div class="card-img-overlay">
+              <h5 class="card-title">Incineroar</h5>
+            </div>
+          </div>
+
+
+          <div class="card text-center" style="width: 10vw; height: 14vw;">
+          <img src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/incineroar.jpg" class="card-img-top" alt="character art" style="height: 10vw; width: 10vw; max-height:100%; max-width:100%;">
+          
+          -->
+          <div class="card text-center h-100" style="width:100%;">
+          <img src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/incineroar.jpg" class="card-img-top" alt="Incineroar" loading="lazy" style="height:15vh;">
+            <div class="card-body">
+              <h5 class="card-title" style="margin-bottom: 0 !important;">Incineroar</h5>
+              <a href="/Incineroar/" class="stretched-link"></a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-3 col-md-2" style="padding:5px">
+          <!-- attempt to use overlay
+          <div class="card bg-dark text-white">
+            <img class="card-img" src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/inkling.jpg" alt="Character image">
+            <div class="card-img-overlay">
+              <h5 class="card-title">Inkling</h5>
+            </div>
+          </div>
+
+
+          <div class="card text-center" style="width: 10vw; height: 14vw;">
+          <img src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/inkling.jpg" class="card-img-top" alt="character art" style="height: 10vw; width: 10vw; max-height:100%; max-width:100%;">
+          
+          -->
+          <div class="card text-center h-100" style="width:100%;">
+          <img src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/inkling.jpg" class="card-img-top" alt="Inkling" loading="lazy" style="height:15vh;">
+            <div class="card-body">
+              <h5 class="card-title" style="margin-bottom: 0 !important;">Inkling</h5>
+              <a href="/Inkling/" class="stretched-link"></a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-3 col-md-2" style="padding:5px">
+          <!-- attempt to use overlay
+          <div class="card bg-dark text-white">
+            <img class="card-img" src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/isabelle.jpg" alt="Character image">
+            <div class="card-img-overlay">
+              <h5 class="card-title">Isabelle</h5>
+            </div>
+          </div>
+
+
+          <div class="card text-center" style="width: 10vw; height: 14vw;">
+          <img src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/isabelle.jpg" class="card-img-top" alt="character art" style="height: 10vw; width: 10vw; max-height:100%; max-width:100%;">
+          
+          -->
+          <div class="card text-center h-100" style="width:100%;">
+          <img src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/isabelle.jpg" class="card-img-top" alt="Isabelle" loading="lazy" style="height:15vh;">
+            <div class="card-body">
+              <h5 class="card-title" style="margin-bottom: 0 !important;">Isabelle</h5>
+              <a href="/Isabelle/" class="stretched-link"></a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-3 col-md-2" style="padding:5px">
+          <!-- attempt to use overlay
+          <div class="card bg-dark text-white">
+            <img class="card-img" src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/ivysaur.jpg" alt="Character image">
+            <div class="card-img-overlay">
+              <h5 class="card-title">Ivysaur</h5>
+            </div>
+          </div>
+
+
+          <div class="card text-center" style="width: 10vw; height: 14vw;">
+          <img src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/ivysaur.jpg" class="card-img-top" alt="character art" style="height: 10vw; width: 10vw; max-height:100%; max-width:100%;">
+          
+          -->
+          <div class="card text-center h-100" style="width:100%;">
+          <img src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/ivysaur.jpg" class="card-img-top" alt="Ivysaur" loading="lazy" style="height:15vh;">
+            <div class="card-body">
+              <h5 class="card-title" style="margin-bottom: 0 !important;">Ivysaur</h5>
+              <a href="/Ivysaur/" class="stretched-link"></a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-3 col-md-2" style="padding:5px">
+          <!-- attempt to use overlay
+          <div class="card bg-dark text-white">
+            <img class="card-img" src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/jigglypuff.jpg" alt="Character image">
+            <div class="card-img-overlay">
+              <h5 class="card-title">Jigglypuff</h5>
+            </div>
+          </div>
+
+
+          <div class="card text-center" style="width: 10vw; height: 14vw;">
+          <img src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/jigglypuff.jpg" class="card-img-top" alt="character art" style="height: 10vw; width: 10vw; max-height:100%; max-width:100%;">
+          
+          -->
+          <div class="card text-center h-100" style="width:100%;">
+          <img src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/jigglypuff.jpg" class="card-img-top" alt="Jigglypuff" loading="lazy" style="height:15vh;">
+            <div class="card-body">
+              <h5 class="card-title" style="margin-bottom: 0 !important;">Jigglypuff</h5>
+              <a href="/Jigglypuff/" class="stretched-link"></a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-3 col-md-2" style="padding:5px">
+          <!-- attempt to use overlay
+          <div class="card bg-dark text-white">
+            <img class="card-img" src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/joker.jpg" alt="Character image">
+            <div class="card-img-overlay">
+              <h5 class="card-title">Joker</h5>
+            </div>
+          </div>
+
+
+          <div class="card text-center" style="width: 10vw; height: 14vw;">
+          <img src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/joker.jpg" class="card-img-top" alt="character art" style="height: 10vw; width: 10vw; max-height:100%; max-width:100%;">
+          
+          -->
+          <div class="card text-center h-100" style="width:100%;">
+          <img src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/joker.jpg" class="card-img-top" alt="Joker" loading="lazy" style="height:15vh;">
+            <div class="card-body">
+              <h5 class="card-title" style="margin-bottom: 0 !important;">Joker</h5>
+              <a href="/Joker/" class="stretched-link"></a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-3 col-md-2" style="padding:5px">
+          <!-- attempt to use overlay
+          <div class="card bg-dark text-white">
+            <img class="card-img" src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/ken.jpg" alt="Character image">
+            <div class="card-img-overlay">
+              <h5 class="card-title">Ken</h5>
+            </div>
+          </div>
+
+
+          <div class="card text-center" style="width: 10vw; height: 14vw;">
+          <img src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/ken.jpg" class="card-img-top" alt="character art" style="height: 10vw; width: 10vw; max-height:100%; max-width:100%;">
+          
+          -->
+          <div class="card text-center h-100" style="width:100%;">
+          <img src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/ken.jpg" class="card-img-top" alt="Ken" loading="lazy" style="height:15vh;">
+            <div class="card-body">
+              <h5 class="card-title" style="margin-bottom: 0 !important;">Ken</h5>
+              <a href="/Ken/" class="stretched-link"></a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-3 col-md-2" style="padding:5px">
+          <!-- attempt to use overlay
+          <div class="card bg-dark text-white">
+            <img class="card-img" src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/king_dedede.jpg" alt="Character image">
+            <div class="card-img-overlay">
+              <h5 class="card-title">King Dedede</h5>
+            </div>
+          </div>
+
+
+          <div class="card text-center" style="width: 10vw; height: 14vw;">
+          <img src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/king_dedede.jpg" class="card-img-top" alt="character art" style="height: 10vw; width: 10vw; max-height:100%; max-width:100%;">
+          
+          -->
+          <div class="card text-center h-100" style="width:100%;">
+          <img src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/king_dedede.jpg" class="card-img-top" alt="King Dedede" loading="lazy" style="height:15vh;">
+            <div class="card-body">
+              <h5 class="card-title" style="margin-bottom: 0 !important;">King Dedede</h5>
+              <a href="/King%20Dedede/" class="stretched-link"></a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-3 col-md-2" style="padding:5px">
+          <!-- attempt to use overlay
+          <div class="card bg-dark text-white">
+            <img class="card-img" src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/king_k_rool.jpg" alt="Character image">
+            <div class="card-img-overlay">
+              <h5 class="card-title">King K. Rool</h5>
+            </div>
+          </div>
+
+
+          <div class="card text-center" style="width: 10vw; height: 14vw;">
+          <img src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/king_k_rool.jpg" class="card-img-top" alt="character art" style="height: 10vw; width: 10vw; max-height:100%; max-width:100%;">
+          
+          -->
+          <div class="card text-center h-100" style="width:100%;">
+          <img src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/king_k_rool.jpg" class="card-img-top" alt="King K. Rool" loading="lazy" style="height:15vh;">
+            <div class="card-body">
+              <h5 class="card-title" style="margin-bottom: 0 !important;">King K. Rool</h5>
+              <a href="/King%20K.%20Rool/" class="stretched-link"></a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-3 col-md-2" style="padding:5px">
+          <!-- attempt to use overlay
+          <div class="card bg-dark text-white">
+            <img class="card-img" src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/kirby.jpg" alt="Character image">
+            <div class="card-img-overlay">
+              <h5 class="card-title">Kirby</h5>
+            </div>
+          </div>
+
+
+          <div class="card text-center" style="width: 10vw; height: 14vw;">
+          <img src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/kirby.jpg" class="card-img-top" alt="character art" style="height: 10vw; width: 10vw; max-height:100%; max-width:100%;">
+          
+          -->
+          <div class="card text-center h-100" style="width:100%;">
+          <img src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/kirby.jpg" class="card-img-top" alt="Kirby" loading="lazy" style="height:15vh;">
+            <div class="card-body">
+              <h5 class="card-title" style="margin-bottom: 0 !important;">Kirby</h5>
+              <a href="/Kirby/" class="stretched-link"></a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-3 col-md-2" style="padding:5px">
+          <!-- attempt to use overlay
+          <div class="card bg-dark text-white">
+            <img class="card-img" src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/link.jpg" alt="Character image">
+            <div class="card-img-overlay">
+              <h5 class="card-title">Link</h5>
+            </div>
+          </div>
+
+
+          <div class="card text-center" style="width: 10vw; height: 14vw;">
+          <img src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/link.jpg" class="card-img-top" alt="character art" style="height: 10vw; width: 10vw; max-height:100%; max-width:100%;">
+          
+          -->
+          <div class="card text-center h-100" style="width:100%;">
+          <img src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/link.jpg" class="card-img-top" alt="Link" loading="lazy" style="height:15vh;">
+            <div class="card-body">
+              <h5 class="card-title" style="margin-bottom: 0 !important;">Link</h5>
+              <a href="/Link/" class="stretched-link"></a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-3 col-md-2" style="padding:5px">
+          <!-- attempt to use overlay
+          <div class="card bg-dark text-white">
+            <img class="card-img" src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/little_mac.jpg" alt="Character image">
+            <div class="card-img-overlay">
+              <h5 class="card-title">Little Mac</h5>
+            </div>
+          </div>
+
+
+          <div class="card text-center" style="width: 10vw; height: 14vw;">
+          <img src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/little_mac.jpg" class="card-img-top" alt="character art" style="height: 10vw; width: 10vw; max-height:100%; max-width:100%;">
+          
+          -->
+          <div class="card text-center h-100" style="width:100%;">
+          <img src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/little_mac.jpg" class="card-img-top" alt="Little Mac" loading="lazy" style="height:15vh;">
+            <div class="card-body">
+              <h5 class="card-title" style="margin-bottom: 0 !important;">Little Mac</h5>
+              <a href="/Little%20Mac/" class="stretched-link"></a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-3 col-md-2" style="padding:5px">
+          <!-- attempt to use overlay
+          <div class="card bg-dark text-white">
+            <img class="card-img" src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/lucario.jpg" alt="Character image">
+            <div class="card-img-overlay">
+              <h5 class="card-title">Lucario</h5>
+            </div>
+          </div>
+
+
+          <div class="card text-center" style="width: 10vw; height: 14vw;">
+          <img src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/lucario.jpg" class="card-img-top" alt="character art" style="height: 10vw; width: 10vw; max-height:100%; max-width:100%;">
+          
+          -->
+          <div class="card text-center h-100" style="width:100%;">
+          <img src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/lucario.jpg" class="card-img-top" alt="Lucario" loading="lazy" style="height:15vh;">
+            <div class="card-body">
+              <h5 class="card-title" style="margin-bottom: 0 !important;">Lucario</h5>
+              <a href="/Lucario/" class="stretched-link"></a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-3 col-md-2" style="padding:5px">
+          <!-- attempt to use overlay
+          <div class="card bg-dark text-white">
+            <img class="card-img" src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/lucas.jpg" alt="Character image">
+            <div class="card-img-overlay">
+              <h5 class="card-title">Lucas</h5>
+            </div>
+          </div>
+
+
+          <div class="card text-center" style="width: 10vw; height: 14vw;">
+          <img src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/lucas.jpg" class="card-img-top" alt="character art" style="height: 10vw; width: 10vw; max-height:100%; max-width:100%;">
+          
+          -->
+          <div class="card text-center h-100" style="width:100%;">
+          <img src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/lucas.jpg" class="card-img-top" alt="Lucas" loading="lazy" style="height:15vh;">
+            <div class="card-body">
+              <h5 class="card-title" style="margin-bottom: 0 !important;">Lucas</h5>
+              <a href="/Lucas/" class="stretched-link"></a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-3 col-md-2" style="padding:5px">
+          <!-- attempt to use overlay
+          <div class="card bg-dark text-white">
+            <img class="card-img" src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/luigi.jpg" alt="Character image">
+            <div class="card-img-overlay">
+              <h5 class="card-title">Luigi</h5>
+            </div>
+          </div>
+
+
+          <div class="card text-center" style="width: 10vw; height: 14vw;">
+          <img src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/luigi.jpg" class="card-img-top" alt="character art" style="height: 10vw; width: 10vw; max-height:100%; max-width:100%;">
+          
+          -->
+          <div class="card text-center h-100" style="width:100%;">
+          <img src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/luigi.jpg" class="card-img-top" alt="Luigi" loading="lazy" style="height:15vh;">
+            <div class="card-body">
+              <h5 class="card-title" style="margin-bottom: 0 !important;">Luigi</h5>
+              <a href="/Luigi/" class="stretched-link"></a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-3 col-md-2" style="padding:5px">
+          <!-- attempt to use overlay
+          <div class="card bg-dark text-white">
+            <img class="card-img" src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/mario.jpg" alt="Character image">
+            <div class="card-img-overlay">
+              <h5 class="card-title">Mario</h5>
+            </div>
+          </div>
+
+
+          <div class="card text-center" style="width: 10vw; height: 14vw;">
+          <img src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/mario.jpg" class="card-img-top" alt="character art" style="height: 10vw; width: 10vw; max-height:100%; max-width:100%;">
+          
+          -->
+          <div class="card text-center h-100" style="width:100%;">
+          <img src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/mario.jpg" class="card-img-top" alt="Mario" loading="lazy" style="height:15vh;">
+            <div class="card-body">
+              <h5 class="card-title" style="margin-bottom: 0 !important;">Mario</h5>
+              <a href="/Mario/" class="stretched-link"></a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-3 col-md-2" style="padding:5px">
+          <!-- attempt to use overlay
+          <div class="card bg-dark text-white">
+            <img class="card-img" src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/lucina.jpg" alt="Character image">
+            <div class="card-img-overlay">
+              <h5 class="card-title">Marth (Lucina)</h5>
+            </div>
+          </div>
+
+
+          <div class="card text-center" style="width: 10vw; height: 14vw;">
+          <img src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/lucina.jpg" class="card-img-top" alt="character art" style="height: 10vw; width: 10vw; max-height:100%; max-width:100%;">
+          
+          -->
+          <div class="card text-center h-100" style="width:100%;">
+          <img src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/lucina.jpg" class="card-img-top" alt="Marth (Lucina)" loading="lazy" style="height:15vh;">
+            <div class="card-body">
+              <h5 class="card-title" style="margin-bottom: 0 !important;">Marth (Lucina)</h5>
+              <a href="/Marth%20(Lucina)/" class="stretched-link"></a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-3 col-md-2" style="padding:5px">
+          <!-- attempt to use overlay
+          <div class="card bg-dark text-white">
+            <img class="card-img" src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/mega_man.jpg" alt="Character image">
+            <div class="card-img-overlay">
+              <h5 class="card-title">Mega Man</h5>
+            </div>
+          </div>
+
+
+          <div class="card text-center" style="width: 10vw; height: 14vw;">
+          <img src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/mega_man.jpg" class="card-img-top" alt="character art" style="height: 10vw; width: 10vw; max-height:100%; max-width:100%;">
+          
+          -->
+          <div class="card text-center h-100" style="width:100%;">
+          <img src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/mega_man.jpg" class="card-img-top" alt="Mega Man" loading="lazy" style="height:15vh;">
+            <div class="card-body">
+              <h5 class="card-title" style="margin-bottom: 0 !important;">Mega Man</h5>
+              <a href="/Mega%20Man/" class="stretched-link"></a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-3 col-md-2" style="padding:5px">
+          <!-- attempt to use overlay
+          <div class="card bg-dark text-white">
+            <img class="card-img" src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/meta_knight.jpg" alt="Character image">
+            <div class="card-img-overlay">
+              <h5 class="card-title">Meta Knight</h5>
+            </div>
+          </div>
+
+
+          <div class="card text-center" style="width: 10vw; height: 14vw;">
+          <img src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/meta_knight.jpg" class="card-img-top" alt="character art" style="height: 10vw; width: 10vw; max-height:100%; max-width:100%;">
+          
+          -->
+          <div class="card text-center h-100" style="width:100%;">
+          <img src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/meta_knight.jpg" class="card-img-top" alt="Meta Knight" loading="lazy" style="height:15vh;">
+            <div class="card-body">
+              <h5 class="card-title" style="margin-bottom: 0 !important;">Meta Knight</h5>
+              <a href="/Meta%20Knight/" class="stretched-link"></a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-3 col-md-2" style="padding:5px">
+          <!-- attempt to use overlay
+          <div class="card bg-dark text-white">
+            <img class="card-img" src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/mewtwo.jpg" alt="Character image">
+            <div class="card-img-overlay">
+              <h5 class="card-title">Mewtwo</h5>
+            </div>
+          </div>
+
+
+          <div class="card text-center" style="width: 10vw; height: 14vw;">
+          <img src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/mewtwo.jpg" class="card-img-top" alt="character art" style="height: 10vw; width: 10vw; max-height:100%; max-width:100%;">
+          
+          -->
+          <div class="card text-center h-100" style="width:100%;">
+          <img src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/mewtwo.jpg" class="card-img-top" alt="Mewtwo" loading="lazy" style="height:15vh;">
+            <div class="card-body">
+              <h5 class="card-title" style="margin-bottom: 0 !important;">Mewtwo</h5>
+              <a href="/Mewtwo/" class="stretched-link"></a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-3 col-md-2" style="padding:5px">
+          <!-- attempt to use overlay
+          <div class="card bg-dark text-white">
+            <img class="card-img" src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/mii_brawler.jpg" alt="Character image">
+            <div class="card-img-overlay">
+              <h5 class="card-title">Mii Brawler</h5>
+            </div>
+          </div>
+
+
+          <div class="card text-center" style="width: 10vw; height: 14vw;">
+          <img src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/mii_brawler.jpg" class="card-img-top" alt="character art" style="height: 10vw; width: 10vw; max-height:100%; max-width:100%;">
+          
+          -->
+          <div class="card text-center h-100" style="width:100%;">
+          <img src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/mii_brawler.jpg" class="card-img-top" alt="Mii Brawler" loading="lazy" style="height:15vh;">
+            <div class="card-body">
+              <h5 class="card-title" style="margin-bottom: 0 !important;">Mii Brawler</h5>
+              <a href="/Mii%20Brawler/" class="stretched-link"></a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-3 col-md-2" style="padding:5px">
+          <!-- attempt to use overlay
+          <div class="card bg-dark text-white">
+            <img class="card-img" src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/mii_gunner.jpg" alt="Character image">
+            <div class="card-img-overlay">
+              <h5 class="card-title">Mii Gunner</h5>
+            </div>
+          </div>
+
+
+          <div class="card text-center" style="width: 10vw; height: 14vw;">
+          <img src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/mii_gunner.jpg" class="card-img-top" alt="character art" style="height: 10vw; width: 10vw; max-height:100%; max-width:100%;">
+          
+          -->
+          <div class="card text-center h-100" style="width:100%;">
+          <img src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/mii_gunner.jpg" class="card-img-top" alt="Mii Gunner" loading="lazy" style="height:15vh;">
+            <div class="card-body">
+              <h5 class="card-title" style="margin-bottom: 0 !important;">Mii Gunner</h5>
+              <a href="/Mii%20Gunner/" class="stretched-link"></a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-3 col-md-2" style="padding:5px">
+          <!-- attempt to use overlay
+          <div class="card bg-dark text-white">
+            <img class="card-img" src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/mii_swordfighter.jpg" alt="Character image">
+            <div class="card-img-overlay">
+              <h5 class="card-title">Mii Swordfighter</h5>
+            </div>
+          </div>
+
+
+          <div class="card text-center" style="width: 10vw; height: 14vw;">
+          <img src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/mii_swordfighter.jpg" class="card-img-top" alt="character art" style="height: 10vw; width: 10vw; max-height:100%; max-width:100%;">
+          
+          -->
+          <div class="card text-center h-100" style="width:100%;">
+          <img src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/mii_swordfighter.jpg" class="card-img-top" alt="Mii Swordfighter" loading="lazy" style="height:15vh;">
+            <div class="card-body">
+              <h5 class="card-title" style="margin-bottom: 0 !important;">Mii Swordfighter</h5>
+              <a href="/Mii%20Swordfighter/" class="stretched-link"></a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-3 col-md-2" style="padding:5px">
+          <!-- attempt to use overlay
+          <div class="card bg-dark text-white">
+            <img class="card-img" src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/min_min.jpg" alt="Character image">
+            <div class="card-img-overlay">
+              <h5 class="card-title">Min Min</h5>
+            </div>
+          </div>
+
+
+          <div class="card text-center" style="width: 10vw; height: 14vw;">
+          <img src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/min_min.jpg" class="card-img-top" alt="character art" style="height: 10vw; width: 10vw; max-height:100%; max-width:100%;">
+          
+          -->
+          <div class="card text-center h-100" style="width:100%;">
+          <img src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/min_min.jpg" class="card-img-top" alt="Min Min" loading="lazy" style="height:15vh;">
+            <div class="card-body">
+              <h5 class="card-title" style="margin-bottom: 0 !important;">Min Min</h5>
+              <a href="/Min%20Min/" class="stretched-link"></a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-3 col-md-2" style="padding:5px">
+          <!-- attempt to use overlay
+          <div class="card bg-dark text-white">
+            <img class="card-img" src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/mr_game_and_watch.jpg" alt="Character image">
+            <div class="card-img-overlay">
+              <h5 class="card-title">Mr. Game &amp; Watch</h5>
+            </div>
+          </div>
+
+
+          <div class="card text-center" style="width: 10vw; height: 14vw;">
+          <img src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/mr_game_and_watch.jpg" class="card-img-top" alt="character art" style="height: 10vw; width: 10vw; max-height:100%; max-width:100%;">
+          
+          -->
+          <div class="card text-center h-100" style="width:100%;">
+          <img src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/mr_game_and_watch.jpg" class="card-img-top" alt="Mr. Game &amp; Watch" loading="lazy" style="height:15vh;">
+            <div class="card-body">
+              <h5 class="card-title" style="margin-bottom: 0 !important;">Mr. Game &amp; Watch</h5>
+              <a href="/Mr.%20Game%20&amp;%20Watch/" class="stretched-link"></a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-3 col-md-2" style="padding:5px">
+          <!-- attempt to use overlay
+          <div class="card bg-dark text-white">
+            <img class="card-img" src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/ness.jpg" alt="Character image">
+            <div class="card-img-overlay">
+              <h5 class="card-title">Ness</h5>
+            </div>
+          </div>
+
+
+          <div class="card text-center" style="width: 10vw; height: 14vw;">
+          <img src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/ness.jpg" class="card-img-top" alt="character art" style="height: 10vw; width: 10vw; max-height:100%; max-width:100%;">
+          
+          -->
+          <div class="card text-center h-100" style="width:100%;">
+          <img src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/ness.jpg" class="card-img-top" alt="Ness" loading="lazy" style="height:15vh;">
+            <div class="card-body">
+              <h5 class="card-title" style="margin-bottom: 0 !important;">Ness</h5>
+              <a href="/Ness/" class="stretched-link"></a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-3 col-md-2" style="padding:5px">
+          <!-- attempt to use overlay
+          <div class="card bg-dark text-white">
+            <img class="card-img" src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/olimar.jpg" alt="Character image">
+            <div class="card-img-overlay">
+              <h5 class="card-title">Olimar</h5>
+            </div>
+          </div>
+
+
+          <div class="card text-center" style="width: 10vw; height: 14vw;">
+          <img src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/olimar.jpg" class="card-img-top" alt="character art" style="height: 10vw; width: 10vw; max-height:100%; max-width:100%;">
+          
+          -->
+          <div class="card text-center h-100" style="width:100%;">
+          <img src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/olimar.jpg" class="card-img-top" alt="Olimar" loading="lazy" style="height:15vh;">
+            <div class="card-body">
+              <h5 class="card-title" style="margin-bottom: 0 !important;">Olimar</h5>
+              <a href="/Olimar/" class="stretched-link"></a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-3 col-md-2" style="padding:5px">
+          <!-- attempt to use overlay
+          <div class="card bg-dark text-white">
+            <img class="card-img" src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/pac-man.jpg" alt="Character image">
+            <div class="card-img-overlay">
+              <h5 class="card-title">Pac-Man</h5>
+            </div>
+          </div>
+
+
+          <div class="card text-center" style="width: 10vw; height: 14vw;">
+          <img src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/pac-man.jpg" class="card-img-top" alt="character art" style="height: 10vw; width: 10vw; max-height:100%; max-width:100%;">
+          
+          -->
+          <div class="card text-center h-100" style="width:100%;">
+          <img src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/pac-man.jpg" class="card-img-top" alt="Pac-Man" loading="lazy" style="height:15vh;">
+            <div class="card-body">
+              <h5 class="card-title" style="margin-bottom: 0 !important;">Pac-Man</h5>
+              <a href="/Pac-Man/" class="stretched-link"></a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-3 col-md-2" style="padding:5px">
+          <!-- attempt to use overlay
+          <div class="card bg-dark text-white">
+            <img class="card-img" src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/palutena.jpg" alt="Character image">
+            <div class="card-img-overlay">
+              <h5 class="card-title">Palutena</h5>
+            </div>
+          </div>
+
+
+          <div class="card text-center" style="width: 10vw; height: 14vw;">
+          <img src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/palutena.jpg" class="card-img-top" alt="character art" style="height: 10vw; width: 10vw; max-height:100%; max-width:100%;">
+          
+          -->
+          <div class="card text-center h-100" style="width:100%;">
+          <img src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/palutena.jpg" class="card-img-top" alt="Palutena" loading="lazy" style="height:15vh;">
+            <div class="card-body">
+              <h5 class="card-title" style="margin-bottom: 0 !important;">Palutena</h5>
+              <a href="/Palutena/" class="stretched-link"></a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-3 col-md-2" style="padding:5px">
+          <!-- attempt to use overlay
+          <div class="card bg-dark text-white">
+            <img class="card-img" src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/peach.jpg" alt="Character image">
+            <div class="card-img-overlay">
+              <h5 class="card-title">Peach (Daisy)</h5>
+            </div>
+          </div>
+
+
+          <div class="card text-center" style="width: 10vw; height: 14vw;">
+          <img src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/peach.jpg" class="card-img-top" alt="character art" style="height: 10vw; width: 10vw; max-height:100%; max-width:100%;">
+          
+          -->
+          <div class="card text-center h-100" style="width:100%;">
+          <img src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/peach.jpg" class="card-img-top" alt="Peach (Daisy)" loading="lazy" style="height:15vh;">
+            <div class="card-body">
+              <h5 class="card-title" style="margin-bottom: 0 !important;">Peach (Daisy)</h5>
+              <a href="/Peach%20(Daisy)/" class="stretched-link"></a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-3 col-md-2" style="padding:5px">
+          <!-- attempt to use overlay
+          <div class="card bg-dark text-white">
+            <img class="card-img" src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/pichu.jpg" alt="Character image">
+            <div class="card-img-overlay">
+              <h5 class="card-title">Pichu</h5>
+            </div>
+          </div>
+
+
+          <div class="card text-center" style="width: 10vw; height: 14vw;">
+          <img src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/pichu.jpg" class="card-img-top" alt="character art" style="height: 10vw; width: 10vw; max-height:100%; max-width:100%;">
+          
+          -->
+          <div class="card text-center h-100" style="width:100%;">
+          <img src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/pichu.jpg" class="card-img-top" alt="Pichu" loading="lazy" style="height:15vh;">
+            <div class="card-body">
+              <h5 class="card-title" style="margin-bottom: 0 !important;">Pichu</h5>
+              <a href="/Pichu/" class="stretched-link"></a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-3 col-md-2" style="padding:5px">
+          <!-- attempt to use overlay
+          <div class="card bg-dark text-white">
+            <img class="card-img" src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/pikachu.jpg" alt="Character image">
+            <div class="card-img-overlay">
+              <h5 class="card-title">Pikachu</h5>
+            </div>
+          </div>
+
+
+          <div class="card text-center" style="width: 10vw; height: 14vw;">
+          <img src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/pikachu.jpg" class="card-img-top" alt="character art" style="height: 10vw; width: 10vw; max-height:100%; max-width:100%;">
+          
+          -->
+          <div class="card text-center h-100" style="width:100%;">
+          <img src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/pikachu.jpg" class="card-img-top" alt="Pikachu" loading="lazy" style="height:15vh;">
+            <div class="card-body">
+              <h5 class="card-title" style="margin-bottom: 0 !important;">Pikachu</h5>
+              <a href="/Pikachu/" class="stretched-link"></a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-3 col-md-2" style="padding:5px">
+          <!-- attempt to use overlay
+          <div class="card bg-dark text-white">
+            <img class="card-img" src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/piranha_plant.jpg" alt="Character image">
+            <div class="card-img-overlay">
+              <h5 class="card-title">Piranha Plant</h5>
+            </div>
+          </div>
+
+
+          <div class="card text-center" style="width: 10vw; height: 14vw;">
+          <img src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/piranha_plant.jpg" class="card-img-top" alt="character art" style="height: 10vw; width: 10vw; max-height:100%; max-width:100%;">
+          
+          -->
+          <div class="card text-center h-100" style="width:100%;">
+          <img src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/piranha_plant.jpg" class="card-img-top" alt="Piranha Plant" loading="lazy" style="height:15vh;">
+            <div class="card-body">
+              <h5 class="card-title" style="margin-bottom: 0 !important;">Piranha Plant</h5>
+              <a href="/Piranha%20Plant/" class="stretched-link"></a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-3 col-md-2" style="padding:5px">
+          <!-- attempt to use overlay
+          <div class="card bg-dark text-white">
+            <img class="card-img" src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/pit.jpg" alt="Character image">
+            <div class="card-img-overlay">
+              <h5 class="card-title">Pit</h5>
+            </div>
+          </div>
+
+
+          <div class="card text-center" style="width: 10vw; height: 14vw;">
+          <img src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/pit.jpg" class="card-img-top" alt="character art" style="height: 10vw; width: 10vw; max-height:100%; max-width:100%;">
+          
+          -->
+          <div class="card text-center h-100" style="width:100%;">
+          <img src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/pit.jpg" class="card-img-top" alt="Pit" loading="lazy" style="height:15vh;">
+            <div class="card-body">
+              <h5 class="card-title" style="margin-bottom: 0 !important;">Pit</h5>
+              <a href="/Pit/" class="stretched-link"></a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-3 col-md-2" style="padding:5px">
+          <!-- attempt to use overlay
+          <div class="card bg-dark text-white">
+            <img class="card-img" src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/pokemon_trainer.jpg" alt="Character image">
+            <div class="card-img-overlay">
+              <h5 class="card-title">Pokémon Trainer</h5>
+            </div>
+          </div>
+
+
+          <div class="card text-center" style="width: 10vw; height: 14vw;">
+          <img src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/pokemon_trainer.jpg" class="card-img-top" alt="character art" style="height: 10vw; width: 10vw; max-height:100%; max-width:100%;">
+          
+          -->
+          <div class="card text-center h-100" style="width:100%;">
+          <img src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/pokemon_trainer.jpg" class="card-img-top" alt="Pokémon Trainer" loading="lazy" style="height:15vh;">
+            <div class="card-body">
+              <h5 class="card-title" style="margin-bottom: 0 !important;">Pokémon Trainer</h5>
+              <a href="/Pok%C3%A9mon%20Trainer/" class="stretched-link"></a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-3 col-md-2" style="padding:5px">
+          <!-- attempt to use overlay
+          <div class="card bg-dark text-white">
+            <img class="card-img" src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/ridley.jpg" alt="Character image">
+            <div class="card-img-overlay">
+              <h5 class="card-title">Ridley</h5>
+            </div>
+          </div>
+
+
+          <div class="card text-center" style="width: 10vw; height: 14vw;">
+          <img src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/ridley.jpg" class="card-img-top" alt="character art" style="height: 10vw; width: 10vw; max-height:100%; max-width:100%;">
+          
+          -->
+          <div class="card text-center h-100" style="width:100%;">
+          <img src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/ridley.jpg" class="card-img-top" alt="Ridley" loading="lazy" style="height:15vh;">
+            <div class="card-body">
+              <h5 class="card-title" style="margin-bottom: 0 !important;">Ridley</h5>
+              <a href="/Ridley/" class="stretched-link"></a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-3 col-md-2" style="padding:5px">
+          <!-- attempt to use overlay
+          <div class="card bg-dark text-white">
+            <img class="card-img" src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/rob.jpg" alt="Character image">
+            <div class="card-img-overlay">
+              <h5 class="card-title">R.O.B.</h5>
+            </div>
+          </div>
+
+
+          <div class="card text-center" style="width: 10vw; height: 14vw;">
+          <img src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/rob.jpg" class="card-img-top" alt="character art" style="height: 10vw; width: 10vw; max-height:100%; max-width:100%;">
+          
+          -->
+          <div class="card text-center h-100" style="width:100%;">
+          <img src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/rob.jpg" class="card-img-top" alt="R.O.B." loading="lazy" style="height:15vh;">
+            <div class="card-body">
+              <h5 class="card-title" style="margin-bottom: 0 !important;">R.O.B.</h5>
+              <a href="/R.O.B./" class="stretched-link"></a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-3 col-md-2" style="padding:5px">
+          <!-- attempt to use overlay
+          <div class="card bg-dark text-white">
+            <img class="card-img" src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/robin.jpg" alt="Character image">
+            <div class="card-img-overlay">
+              <h5 class="card-title">Robin</h5>
+            </div>
+          </div>
+
+
+          <div class="card text-center" style="width: 10vw; height: 14vw;">
+          <img src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/robin.jpg" class="card-img-top" alt="character art" style="height: 10vw; width: 10vw; max-height:100%; max-width:100%;">
+          
+          -->
+          <div class="card text-center h-100" style="width:100%;">
+          <img src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/robin.jpg" class="card-img-top" alt="Robin" loading="lazy" style="height:15vh;">
+            <div class="card-body">
+              <h5 class="card-title" style="margin-bottom: 0 !important;">Robin</h5>
+              <a href="/Robin/" class="stretched-link"></a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-3 col-md-2" style="padding:5px">
+          <!-- attempt to use overlay
+          <div class="card bg-dark text-white">
+            <img class="card-img" src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/rosalina_and_luma.jpg" alt="Character image">
+            <div class="card-img-overlay">
+              <h5 class="card-title">Rosalina &amp; Luma</h5>
+            </div>
+          </div>
+
+
+          <div class="card text-center" style="width: 10vw; height: 14vw;">
+          <img src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/rosalina_and_luma.jpg" class="card-img-top" alt="character art" style="height: 10vw; width: 10vw; max-height:100%; max-width:100%;">
+          
+          -->
+          <div class="card text-center h-100" style="width:100%;">
+          <img src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/rosalina_and_luma.jpg" class="card-img-top" alt="Rosalina &amp; Luma" loading="lazy" style="height:15vh;">
+            <div class="card-body">
+              <h5 class="card-title" style="margin-bottom: 0 !important;">Rosalina &amp; Luma</h5>
+              <a href="/Rosalina%20&amp;%20Luma/" class="stretched-link"></a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-3 col-md-2" style="padding:5px">
+          <!-- attempt to use overlay
+          <div class="card bg-dark text-white">
+            <img class="card-img" src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/roy.jpg" alt="Character image">
+            <div class="card-img-overlay">
+              <h5 class="card-title">Roy</h5>
+            </div>
+          </div>
+
+
+          <div class="card text-center" style="width: 10vw; height: 14vw;">
+          <img src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/roy.jpg" class="card-img-top" alt="character art" style="height: 10vw; width: 10vw; max-height:100%; max-width:100%;">
+          
+          -->
+          <div class="card text-center h-100" style="width:100%;">
+          <img src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/roy.jpg" class="card-img-top" alt="Roy" loading="lazy" style="height:15vh;">
+            <div class="card-body">
+              <h5 class="card-title" style="margin-bottom: 0 !important;">Roy</h5>
+              <a href="/Roy/" class="stretched-link"></a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-3 col-md-2" style="padding:5px">
+          <!-- attempt to use overlay
+          <div class="card bg-dark text-white">
+            <img class="card-img" src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/ryu.jpg" alt="Character image">
+            <div class="card-img-overlay">
+              <h5 class="card-title">Ryu</h5>
+            </div>
+          </div>
+
+
+          <div class="card text-center" style="width: 10vw; height: 14vw;">
+          <img src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/ryu.jpg" class="card-img-top" alt="character art" style="height: 10vw; width: 10vw; max-height:100%; max-width:100%;">
+          
+          -->
+          <div class="card text-center h-100" style="width:100%;">
+          <img src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/ryu.jpg" class="card-img-top" alt="Ryu" loading="lazy" style="height:15vh;">
+            <div class="card-body">
+              <h5 class="card-title" style="margin-bottom: 0 !important;">Ryu</h5>
+              <a href="/Ryu/" class="stretched-link"></a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-3 col-md-2" style="padding:5px">
+          <!-- attempt to use overlay
+          <div class="card bg-dark text-white">
+            <img class="card-img" src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/samus.jpg" alt="Character image">
+            <div class="card-img-overlay">
+              <h5 class="card-title">Samus (Dark Samus)</h5>
+            </div>
+          </div>
+
+
+          <div class="card text-center" style="width: 10vw; height: 14vw;">
+          <img src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/samus.jpg" class="card-img-top" alt="character art" style="height: 10vw; width: 10vw; max-height:100%; max-width:100%;">
+          
+          -->
+          <div class="card text-center h-100" style="width:100%;">
+          <img src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/samus.jpg" class="card-img-top" alt="Samus (Dark Samus)" loading="lazy" style="height:15vh;">
+            <div class="card-body">
+              <h5 class="card-title" style="margin-bottom: 0 !important;">Samus (Dark Samus)</h5>
+              <a href="/Samus%20(Dark%20Samus)/" class="stretched-link"></a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-3 col-md-2" style="padding:5px">
+          <!-- attempt to use overlay
+          <div class="card bg-dark text-white">
+            <img class="card-img" src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/sheik.jpg" alt="Character image">
+            <div class="card-img-overlay">
+              <h5 class="card-title">Sheik</h5>
+            </div>
+          </div>
+
+
+          <div class="card text-center" style="width: 10vw; height: 14vw;">
+          <img src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/sheik.jpg" class="card-img-top" alt="character art" style="height: 10vw; width: 10vw; max-height:100%; max-width:100%;">
+          
+          -->
+          <div class="card text-center h-100" style="width:100%;">
+          <img src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/sheik.jpg" class="card-img-top" alt="Sheik" loading="lazy" style="height:15vh;">
+            <div class="card-body">
+              <h5 class="card-title" style="margin-bottom: 0 !important;">Sheik</h5>
+              <a href="/Sheik/" class="stretched-link"></a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-3 col-md-2" style="padding:5px">
+          <!-- attempt to use overlay
+          <div class="card bg-dark text-white">
+            <img class="card-img" src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/shulk.jpg" alt="Character image">
+            <div class="card-img-overlay">
+              <h5 class="card-title">Shulk</h5>
+            </div>
+          </div>
+
+
+          <div class="card text-center" style="width: 10vw; height: 14vw;">
+          <img src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/shulk.jpg" class="card-img-top" alt="character art" style="height: 10vw; width: 10vw; max-height:100%; max-width:100%;">
+          
+          -->
+          <div class="card text-center h-100" style="width:100%;">
+          <img src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/shulk.jpg" class="card-img-top" alt="Shulk" loading="lazy" style="height:15vh;">
+            <div class="card-body">
+              <h5 class="card-title" style="margin-bottom: 0 !important;">Shulk</h5>
+              <a href="/Shulk/" class="stretched-link"></a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-3 col-md-2" style="padding:5px">
+          <!-- attempt to use overlay
+          <div class="card bg-dark text-white">
+            <img class="card-img" src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/richter.jpg" alt="Character image">
+            <div class="card-img-overlay">
+              <h5 class="card-title">Simon (Richter)</h5>
+            </div>
+          </div>
+
+
+          <div class="card text-center" style="width: 10vw; height: 14vw;">
+          <img src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/richter.jpg" class="card-img-top" alt="character art" style="height: 10vw; width: 10vw; max-height:100%; max-width:100%;">
+          
+          -->
+          <div class="card text-center h-100" style="width:100%;">
+          <img src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/richter.jpg" class="card-img-top" alt="Simon (Richter)" loading="lazy" style="height:15vh;">
+            <div class="card-body">
+              <h5 class="card-title" style="margin-bottom: 0 !important;">Simon (Richter)</h5>
+              <a href="/Simon%20(Richter)/" class="stretched-link"></a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-3 col-md-2" style="padding:5px">
+          <!-- attempt to use overlay
+          <div class="card bg-dark text-white">
+            <img class="card-img" src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/snake.jpg" alt="Character image">
+            <div class="card-img-overlay">
+              <h5 class="card-title">Snake</h5>
+            </div>
+          </div>
+
+
+          <div class="card text-center" style="width: 10vw; height: 14vw;">
+          <img src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/snake.jpg" class="card-img-top" alt="character art" style="height: 10vw; width: 10vw; max-height:100%; max-width:100%;">
+          
+          -->
+          <div class="card text-center h-100" style="width:100%;">
+          <img src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/snake.jpg" class="card-img-top" alt="Snake" loading="lazy" style="height:15vh;">
+            <div class="card-body">
+              <h5 class="card-title" style="margin-bottom: 0 !important;">Snake</h5>
+              <a href="/Snake/" class="stretched-link"></a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-3 col-md-2" style="padding:5px">
+          <!-- attempt to use overlay
+          <div class="card bg-dark text-white">
+            <img class="card-img" src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/sonic.jpg" alt="Character image">
+            <div class="card-img-overlay">
+              <h5 class="card-title">Sonic</h5>
+            </div>
+          </div>
+
+
+          <div class="card text-center" style="width: 10vw; height: 14vw;">
+          <img src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/sonic.jpg" class="card-img-top" alt="character art" style="height: 10vw; width: 10vw; max-height:100%; max-width:100%;">
+          
+          -->
+          <div class="card text-center h-100" style="width:100%;">
+          <img src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/sonic.jpg" class="card-img-top" alt="Sonic" loading="lazy" style="height:15vh;">
+            <div class="card-body">
+              <h5 class="card-title" style="margin-bottom: 0 !important;">Sonic</h5>
+              <a href="/Sonic/" class="stretched-link"></a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-3 col-md-2" style="padding:5px">
+          <!-- attempt to use overlay
+          <div class="card bg-dark text-white">
+            <img class="card-img" src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/squirtle.jpg" alt="Character image">
+            <div class="card-img-overlay">
+              <h5 class="card-title">Squirtle</h5>
+            </div>
+          </div>
+
+
+          <div class="card text-center" style="width: 10vw; height: 14vw;">
+          <img src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/squirtle.jpg" class="card-img-top" alt="character art" style="height: 10vw; width: 10vw; max-height:100%; max-width:100%;">
+          
+          -->
+          <div class="card text-center h-100" style="width:100%;">
+          <img src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/squirtle.jpg" class="card-img-top" alt="Squirtle" loading="lazy" style="height:15vh;">
+            <div class="card-body">
+              <h5 class="card-title" style="margin-bottom: 0 !important;">Squirtle</h5>
+              <a href="/Squirtle/" class="stretched-link"></a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-3 col-md-2" style="padding:5px">
+          <!-- attempt to use overlay
+          <div class="card bg-dark text-white">
+            <img class="card-img" src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/terry.jpg" alt="Character image">
+            <div class="card-img-overlay">
+              <h5 class="card-title">Terry</h5>
+            </div>
+          </div>
+
+
+          <div class="card text-center" style="width: 10vw; height: 14vw;">
+          <img src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/terry.jpg" class="card-img-top" alt="character art" style="height: 10vw; width: 10vw; max-height:100%; max-width:100%;">
+          
+          -->
+          <div class="card text-center h-100" style="width:100%;">
+          <img src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/terry.jpg" class="card-img-top" alt="Terry" loading="lazy" style="height:15vh;">
+            <div class="card-body">
+              <h5 class="card-title" style="margin-bottom: 0 !important;">Terry</h5>
+              <a href="/Terry/" class="stretched-link"></a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-3 col-md-2" style="padding:5px">
+          <!-- attempt to use overlay
+          <div class="card bg-dark text-white">
+            <img class="card-img" src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/toon_link.jpg" alt="Character image">
+            <div class="card-img-overlay">
+              <h5 class="card-title">Toon Link</h5>
+            </div>
+          </div>
+
+
+          <div class="card text-center" style="width: 10vw; height: 14vw;">
+          <img src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/toon_link.jpg" class="card-img-top" alt="character art" style="height: 10vw; width: 10vw; max-height:100%; max-width:100%;">
+          
+          -->
+          <div class="card text-center h-100" style="width:100%;">
+          <img src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/toon_link.jpg" class="card-img-top" alt="Toon Link" loading="lazy" style="height:15vh;">
+            <div class="card-body">
+              <h5 class="card-title" style="margin-bottom: 0 !important;">Toon Link</h5>
+              <a href="/Toon%20Link/" class="stretched-link"></a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-3 col-md-2" style="padding:5px">
+          <!-- attempt to use overlay
+          <div class="card bg-dark text-white">
+            <img class="card-img" src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/villager.jpg" alt="Character image">
+            <div class="card-img-overlay">
+              <h5 class="card-title">Villager</h5>
+            </div>
+          </div>
+
+
+          <div class="card text-center" style="width: 10vw; height: 14vw;">
+          <img src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/villager.jpg" class="card-img-top" alt="character art" style="height: 10vw; width: 10vw; max-height:100%; max-width:100%;">
+          
+          -->
+          <div class="card text-center h-100" style="width:100%;">
+          <img src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/villager.jpg" class="card-img-top" alt="Villager" loading="lazy" style="height:15vh;">
+            <div class="card-body">
+              <h5 class="card-title" style="margin-bottom: 0 !important;">Villager</h5>
+              <a href="/Villager/" class="stretched-link"></a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-3 col-md-2" style="padding:5px">
+          <!-- attempt to use overlay
+          <div class="card bg-dark text-white">
+            <img class="card-img" src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/wario.jpg" alt="Character image">
+            <div class="card-img-overlay">
+              <h5 class="card-title">Wario</h5>
+            </div>
+          </div>
+
+
+          <div class="card text-center" style="width: 10vw; height: 14vw;">
+          <img src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/wario.jpg" class="card-img-top" alt="character art" style="height: 10vw; width: 10vw; max-height:100%; max-width:100%;">
+          
+          -->
+          <div class="card text-center h-100" style="width:100%;">
+          <img src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/wario.jpg" class="card-img-top" alt="Wario" loading="lazy" style="height:15vh;">
+            <div class="card-body">
+              <h5 class="card-title" style="margin-bottom: 0 !important;">Wario</h5>
+              <a href="/Wario/" class="stretched-link"></a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-3 col-md-2" style="padding:5px">
+          <!-- attempt to use overlay
+          <div class="card bg-dark text-white">
+            <img class="card-img" src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/wii_fit_trainer.jpg" alt="Character image">
+            <div class="card-img-overlay">
+              <h5 class="card-title">Wii Fit Trainer</h5>
+            </div>
+          </div>
+
+
+          <div class="card text-center" style="width: 10vw; height: 14vw;">
+          <img src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/wii_fit_trainer.jpg" class="card-img-top" alt="character art" style="height: 10vw; width: 10vw; max-height:100%; max-width:100%;">
+          
+          -->
+          <div class="card text-center h-100" style="width:100%;">
+          <img src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/wii_fit_trainer.jpg" class="card-img-top" alt="Wii Fit Trainer" loading="lazy" style="height:15vh;">
+            <div class="card-body">
+              <h5 class="card-title" style="margin-bottom: 0 !important;">Wii Fit Trainer</h5>
+              <a href="/Wii%20Fit%20Trainer/" class="stretched-link"></a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-3 col-md-2" style="padding:5px">
+          <!-- attempt to use overlay
+          <div class="card bg-dark text-white">
+            <img class="card-img" src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/wolf.jpg" alt="Character image">
+            <div class="card-img-overlay">
+              <h5 class="card-title">Wolf</h5>
+            </div>
+          </div>
+
+
+          <div class="card text-center" style="width: 10vw; height: 14vw;">
+          <img src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/wolf.jpg" class="card-img-top" alt="character art" style="height: 10vw; width: 10vw; max-height:100%; max-width:100%;">
+          
+          -->
+          <div class="card text-center h-100" style="width:100%;">
+          <img src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/wolf.jpg" class="card-img-top" alt="Wolf" loading="lazy" style="height:15vh;">
+            <div class="card-body">
+              <h5 class="card-title" style="margin-bottom: 0 !important;">Wolf</h5>
+              <a href="/Wolf/" class="stretched-link"></a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-3 col-md-2" style="padding:5px">
+          <!-- attempt to use overlay
+          <div class="card bg-dark text-white">
+            <img class="card-img" src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/yoshi.jpg" alt="Character image">
+            <div class="card-img-overlay">
+              <h5 class="card-title">Yoshi</h5>
+            </div>
+          </div>
+
+
+          <div class="card text-center" style="width: 10vw; height: 14vw;">
+          <img src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/yoshi.jpg" class="card-img-top" alt="character art" style="height: 10vw; width: 10vw; max-height:100%; max-width:100%;">
+          
+          -->
+          <div class="card text-center h-100" style="width:100%;">
+          <img src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/yoshi.jpg" class="card-img-top" alt="Yoshi" loading="lazy" style="height:15vh;">
+            <div class="card-body">
+              <h5 class="card-title" style="margin-bottom: 0 !important;">Yoshi</h5>
+              <a href="/Yoshi/" class="stretched-link"></a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-3 col-md-2" style="padding:5px">
+          <!-- attempt to use overlay
+          <div class="card bg-dark text-white">
+            <img class="card-img" src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/young_link.jpg" alt="Character image">
+            <div class="card-img-overlay">
+              <h5 class="card-title">Young Link</h5>
+            </div>
+          </div>
+
+
+          <div class="card text-center" style="width: 10vw; height: 14vw;">
+          <img src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/young_link.jpg" class="card-img-top" alt="character art" style="height: 10vw; width: 10vw; max-height:100%; max-width:100%;">
+          
+          -->
+          <div class="card text-center h-100" style="width:100%;">
+          <img src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/young_link.jpg" class="card-img-top" alt="Young Link" loading="lazy" style="height:15vh;">
+            <div class="card-body">
+              <h5 class="card-title" style="margin-bottom: 0 !important;">Young Link</h5>
+              <a href="/Young%20Link/" class="stretched-link"></a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-3 col-md-2" style="padding:5px">
+          <!-- attempt to use overlay
+          <div class="card bg-dark text-white">
+            <img class="card-img" src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/zelda.jpg" alt="Character image">
+            <div class="card-img-overlay">
+              <h5 class="card-title">Zelda</h5>
+            </div>
+          </div>
+
+
+          <div class="card text-center" style="width: 10vw; height: 14vw;">
+          <img src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/zelda.jpg" class="card-img-top" alt="character art" style="height: 10vw; width: 10vw; max-height:100%; max-width:100%;">
+          
+          -->
+          <div class="card text-center h-100" style="width:100%;">
+          <img src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/zelda.jpg" class="card-img-top" alt="Zelda" loading="lazy" style="height:15vh;">
+            <div class="card-body">
+              <h5 class="card-title" style="margin-bottom: 0 !important;">Zelda</h5>
+              <a href="/Zelda/" class="stretched-link"></a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-3 col-md-2" style="padding:5px">
+          <!-- attempt to use overlay
+          <div class="card bg-dark text-white">
+            <img class="card-img" src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/zero_suit_samus.jpg" alt="Character image">
+            <div class="card-img-overlay">
+              <h5 class="card-title">Zero Suit Samus</h5>
+            </div>
+          </div>
+
+
+          <div class="card text-center" style="width: 10vw; height: 14vw;">
+          <img src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/zero_suit_samus.jpg" class="card-img-top" alt="character art" style="height: 10vw; width: 10vw; max-height:100%; max-width:100%;">
+          
+          -->
+          <div class="card text-center h-100" style="width:100%;">
+          <img src="https://stageguidesbucket.s3.amazonaws.com/static/guide/images/zero_suit_samus.jpg" class="card-img-top" alt="Zero Suit Samus" loading="lazy" style="height:15vh;">
+            <div class="card-body">
+              <h5 class="card-title" style="margin-bottom: 0 !important;">Zero Suit Samus</h5>
+              <a href="/Zero%20Suit%20Samus/" class="stretched-link"></a>
+            </div>
+          </div>
+        </div>
+        
+        </div>
+    </div>
+    
+
+
+    <footer class="footer">
+      <div class="container-fluid text-center text-md-right">
+      
+        <a href="/cookiepolicy">Cookie Policy</a> &middot;
+        <a href="/privacypolicy">Privacy Policy</a> &middot;
+        <a href="/termsandconditions">Terms & Conditions</a>
+      
+    </div>
+
+
+
+    <!-- Footer at bottom of every page -->
+    <div class="jumbotron text-center" style="margin-bottom:0">
+        <p>SSBU Stage Guides isn't endorsed by Nintendo and doesn't reflect the views or opinions of Nintendo or anyone officially involved in producing or managing Super Smash Bros. <br>
+          Super Smash Bros. and Nintendo are trademarks or registered trademarks of Nintendo CO., LTD</p>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <!-- Latest compiled and minified JavaScript for bootstrap-select -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/js/bootstrap-select.min.js"></script>
+    <!-- (Optional) Latest compiled and minified JavaScript translation files for bootstrap-select -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/js/i18n/defaults-*.min.js"></script>
+  </body>
+</html>

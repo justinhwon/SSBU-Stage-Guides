@@ -15,15 +15,18 @@ import math
 from .models import Character, Vote
 
 # the homepage
+"""
 class HomepageView(generic.ListView):
     template_name = 'guide/homepage.html'
     context_object_name = 'character_list'
 
     def get_queryset(self):
-        """
-        Return all characters ordered alphabetically.
-        """
+        #Return all characters ordered alphabetically.
         return Character.objects.order_by('name')
+"""
+
+class HomepageView(generic.TemplateView):
+    template_name = 'guide/homepagetemplate.html'
 
 class PrivacyView(generic.TemplateView):
     template_name = 'guide/privacypolicy.html'
@@ -43,58 +46,58 @@ def varToName(d, votes):
         # map to readable names
         if key == 'battlefield__avg':
             key = 'Battlefield'
-            #img = 'guide/stage_images/' + 'battlefield.png'
-            img = "https://www.ssbwiki.com/images/thumb/8/86/SSBU-Battlefield.png/300px-SSBU-Battlefield.png"
+            img = 'guide/stage_images/' + 'battlefield.png'
+            #img = "https://www.ssbwiki.com/images/thumb/8/86/SSBU-Battlefield.png/300px-SSBU-Battlefield.png"
             numVotes = votes.filter(battlefield__isnull=False).count()
         elif key == 'final_destination__avg':
             key = 'Final Destination'
-            #img = 'guide/stage_images/' + 'final_destination.jpg'
-            img = "https://www.ssbwiki.com/images/thumb/9/91/SSBU-Final_Destination.jpg/300px-SSBU-Final_Destination.jpg"
+            img = 'guide/stage_images/' + 'final_destination.jpg'
+            #img = "https://www.ssbwiki.com/images/thumb/9/91/SSBU-Final_Destination.jpg/300px-SSBU-Final_Destination.jpg"
             numVotes = votes.filter(final_destination__isnull=False).count()
         elif key == 'pokemon_stadium__avg':
             key = 'Pokémon Stadium 2'
-            #img = 'guide/stage_images/' + 'pokemon_stadium.png'
-            img = "https://www.ssbwiki.com/images/thumb/7/73/SSBU-Pok%C3%A9mon_Stadium_2.png/300px-SSBU-Pok%C3%A9mon_Stadium_2.png"
+            img = 'guide/stage_images/' + 'pokemon_stadium.png'
+            #img = "https://www.ssbwiki.com/images/thumb/7/73/SSBU-Pok%C3%A9mon_Stadium_2.png/300px-SSBU-Pok%C3%A9mon_Stadium_2.png"
             numVotes = votes.filter(pokemon_stadium__isnull=False).count()
         elif key == 'small_battlefield__avg':
             key = 'Small Battlefield'
-            #img = 'guide/stage_images/' + 'pokemon_stadium.png'
-            img = "https://www.ssbwiki.com/images/thumb/7/7e/SSBU-Small-Battlefield.jpg/300px-SSBU-Small-Battlefield.jpg"
+            img = 'guide/stage_images/' + 'small_battlefield.jpg'
+            #img = "https://www.ssbwiki.com/images/thumb/7/7e/SSBU-Small-Battlefield.jpg/300px-SSBU-Small-Battlefield.jpg"
             numVotes = votes.filter(small_battlefield__isnull=False).count()
         elif key == 'smashville__avg':
             key = 'Smashville'
-            #img = 'guide/stage_images/' + 'smashville.png'
-            img = "https://www.ssbwiki.com/images/thumb/0/02/SSBU-Smashville.png/300px-SSBU-Smashville.png"
+            img = 'guide/stage_images/' + 'smashville.png'
+            #img = "https://www.ssbwiki.com/images/thumb/0/02/SSBU-Smashville.png/300px-SSBU-Smashville.png"
             numVotes = votes.filter(smashville__isnull=False).count()
         elif key == 'lylat__avg':
             key = 'Lylat Cruise'
-            #img = 'guide/stage_images/' + 'lylat.jpg'
-            img = "https://www.ssbwiki.com/images/thumb/5/5f/SSBU-Lylat_Cruise.jpg/300px-SSBU-Lylat_Cruise.jpg"
+            img = 'guide/stage_images/' + 'lylat.jpg'
+            #img = "https://www.ssbwiki.com/images/thumb/5/5f/SSBU-Lylat_Cruise.jpg/300px-SSBU-Lylat_Cruise.jpg"
             numVotes = votes.filter(lylat__isnull=False).count()
         elif key == 'town__avg':
             key = 'Town and City'
-            #img = 'guide/stage_images/' + 'town.png'
-            img = "https://www.ssbwiki.com/images/thumb/2/26/SSBU-Town_and_City.png/300px-SSBU-Town_and_City.png"
+            img = 'guide/stage_images/' + 'town.png'
+            #img = "https://www.ssbwiki.com/images/thumb/2/26/SSBU-Town_and_City.png/300px-SSBU-Town_and_City.png"
             numVotes = votes.filter(town__isnull=False).count()
         elif key == 'kalos__avg':
             key = 'Kalos'
-            #img = 'guide/stage_images/' + 'kalos.png'
-            img = "https://www.ssbwiki.com/images/thumb/b/bf/SSBU-Kalos_Pok%C3%A9mon_League.png/300px-SSBU-Kalos_Pok%C3%A9mon_League.png"
+            img = 'guide/stage_images/' + 'kalos.png'
+            #img = "https://www.ssbwiki.com/images/thumb/b/bf/SSBU-Kalos_Pok%C3%A9mon_League.png/300px-SSBU-Kalos_Pok%C3%A9mon_League.png"
             numVotes = votes.filter(kalos__isnull=False).count()
         elif key == 'yoshi_story__avg':
             key = "Yoshi's Story"
-            #img = 'guide/stage_images/' + 'yoshi_story.png'
-            img = "https://www.ssbwiki.com/images/thumb/0/0c/SSBU-Yoshi%27s_Story.png/300px-SSBU-Yoshi%27s_Story.png"
+            img = 'guide/stage_images/' + 'yoshi_story.png'
+            #img = "https://www.ssbwiki.com/images/thumb/0/0c/SSBU-Yoshi%27s_Story.png/300px-SSBU-Yoshi%27s_Story.png"
             numVotes = votes.filter(yoshi_story__isnull=False).count()
         elif key == 'yoshi_island__avg':
             key = "Yoshi's Island"
-            #img = 'guide/stage_images/' + 'yoshi_island.png'
-            img = "https://www.ssbwiki.com/images/thumb/7/7b/SSBU-Yoshi%27s_Island_%28SSBB%29.png/300px-SSBU-Yoshi%27s_Island_%28SSBB%29.png"
+            img = 'guide/stage_images/' + 'yoshi_island.png'
+            #img = "https://www.ssbwiki.com/images/thumb/7/7b/SSBU-Yoshi%27s_Island_%28SSBB%29.png/300px-SSBU-Yoshi%27s_Island_%28SSBB%29.png"
             numVotes = votes.filter(yoshi_island__isnull=False).count()
         elif key == 'unova__avg':
             key = "Unova"
-            #img = 'guide/stage_images/' + 'unova.png'
-            img = "https://www.ssbwiki.com/images/thumb/b/b2/SSBU-Unova_Pok%C3%A9mon_League.png/300px-SSBU-Unova_Pok%C3%A9mon_League.png"
+            img = 'guide/stage_images/' + 'unova.png'
+            #img = "https://www.ssbwiki.com/images/thumb/b/b2/SSBU-Unova_Pok%C3%A9mon_League.png/300px-SSBU-Unova_Pok%C3%A9mon_League.png"
             numVotes = votes.filter(unova__isnull=False).count()
         temp = [key, value, img, numVotes]
         mappedDict.append(temp)
@@ -396,7 +399,7 @@ class MatchupInfoView(generic.DetailView):
                 Avg('yoshi_island'), Avg('unova'))
 
             # convert to list of form (stage_name, score)
-            vote_avgs = varToName(vote_avgs_dict)
+            vote_avgs = varToName(vote_avgs_dict, votes)
 
             
 
@@ -433,7 +436,7 @@ class MatchupInfoView(generic.DetailView):
                 Avg('yoshi_island'), Avg('unova'))
 
             # convert to list of form (stage_name, score)
-            opp_vote_avgs = varToName(opp_vote_avgs_dict)
+            opp_vote_avgs = varToName(opp_vote_avgs_dict, opp_votes)
 
             # sort stage by avg score
             #vote_avgs.sort(key = lambda x: x[1], reverse=True)

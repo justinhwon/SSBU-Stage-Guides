@@ -8,7 +8,7 @@
 </div>
 
 <div class="text-center">
-<img src="{{character.link}}" class="img-fluid" alt="character art" style="height:250px;">
+<img src="{% static character.image_link %}" class="img-fluid" alt="character art" style="height:250px;">
 </div>
 
 <div class="text-center">
@@ -33,7 +33,7 @@
                 <div class="col-6 col-md-3">
                     <h4>
                         <b>#{{forloop.counter}}: {{vote.0}} </b><br>
-                        <img id="{{forloop.counter}}" src="{{vote.2}}" alt="stage image" class="rounded border border-dark" style="border-width:2px !important;" onclick="greyOutFxn{{forloop.counter}}()" width="150" height="84">
+                        <img id="{{forloop.counter}}" src="{% static vote.2 %}" alt="stage image" class="rounded border border-dark" style="border-width:2px !important;" onclick="greyOutFxn{{forloop.counter}}()" width="150" height="84">
                         <script>
                             function greyOutFxn{{forloop.counter}}(){
                                 var stage = document.getElementById('{{forloop.counter}}');
@@ -48,8 +48,8 @@
                             }
                         </script>
                         <br>
-                        Score: {{vote.1|floatformat:2}} {% if vote.1 is None %} No votes. {% endif %}<br>
-                        {{vote.3}} votes
+                        Score: {{vote.1|floatformat:2}} {% if vote.1 is None %} No votes. {% endif %} <br>
+                        ({{vote.3}} votes)
                     </h4>
                 </div>
             {% endfor %}
