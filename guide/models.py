@@ -29,6 +29,9 @@ class Character(models.Model):
         return 'guide/images/' + self.image
 
 class Vote(models.Model):
+    # date/time submitted
+    timestampUpdated = models.DateTimeField('Updated', auto_now=True)
+    timestampCreated = models.DateTimeField('Created', auto_now_add=True)
     # name of character is foreign key
     character = models.ForeignKey(Character, on_delete=models.CASCADE)
     # the name of stage represents the vote value
@@ -48,6 +51,6 @@ class Vote(models.Model):
         """
         String representation is the character name.
         """
-        return (str(self.character) + str(self.battlefield) + str(self.final_destination) + str(self.pokemon_stadium) + str(self.small_battlefield) +
+        return (str(self.character) + str(self.battlefield) +  str(self.small_battlefield) + str(self.final_destination) + str(self.pokemon_stadium) +
                 str(self.smashville) + str(self.town) + str(self.lylat) + str(self.kalos) + str(self.yoshi_story) + 
                 str(self.yoshi_island) + str(self.unova) )
