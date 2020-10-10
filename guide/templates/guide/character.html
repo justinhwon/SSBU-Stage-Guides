@@ -42,7 +42,8 @@
                             }
                         </script>
                         <br>
-                        Score: {{vote.1|floatformat:2}} {% if vote.1 is None %} No votes. {% endif %}
+                        Score: {{vote.1|floatformat:2}} {% if vote.1 is None %} No votes. {% endif %}<br>
+                        {{vote.3}} votes
                     </h4>
                 </div>
             {% endfor %}
