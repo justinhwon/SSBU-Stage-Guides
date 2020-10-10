@@ -24,14 +24,14 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['0.0.0.0', '192.168.0.152', '.herokuapp.com', '.ssbu-stage-guides.com']
 
 
 # enforce https and www, turn off when debugging
 SECURE_SSL_REDIRECT = False
-PREPEND_WWW = False
+PREPEND_WWW = True
 
 
 # Application definition
