@@ -26,12 +26,12 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['0.0.0.0', '192.168.0.152', '.herokuapp.com', 'stageguides.com', '.ssbu-stage-guides.com']
+ALLOWED_HOSTS = ['0.0.0.0', '192.168.0.152', '.herokuapp.com', '.stageguides.com', '.ssbu-stage-guides.com']
 
 
 # enforce https and www, turn off when debugging
-SECURE_SSL_REDIRECT = True
-PREPEND_WWW = True
+SECURE_SSL_REDIRECT = False
+PREPEND_WWW = False
 
 
 # Application definition
