@@ -8,6 +8,12 @@
 {% endfor %}
 -->
 
+    <!-- Domain update alert (delete after expires)-->
+    <br>
+    <div class="alert alert-danger" role="alert">
+      The domain name has changed to <a href="https://www.stageguides.com">stageguides.com</a>! Please click/use the new URL as the old URL ssbu-stage-guides.com will no longer work after June 18, 2021.
+    </div>
+
     <!-- Homepage helper text -->
     <div class="jumbotron text-center" style="padding-top: 20px; padding-bottom: 5px;">
         <p>Click button below to get stage info for a specific matchup:</p>
@@ -76,6 +82,7 @@
             <option value="Piranha Plant" data-tokens="Plant">Piranha Plant</option>
             <option value="Pit">Pit</option>
             <option value="Pokémon Trainer" data-tokens="Pokemon Trainer">Pokémon Trainer</option>
+            <option value="Pyra & Mythra" data-tokens="Mythra">Pyra & Mythra</option>
             <option value="Ridley">Ridley</option>
             <option value="R.O.B." data-tokens="ROB">R.O.B.</option>
             <option value="Robin">Robin</option>
@@ -127,7 +134,7 @@
           
           -->
           <div class="card text-center h-100" style="width:100%;">
-          <img src="{% static character.image_link %}" class="card-img-top" alt="{{character.name}}" loading="lazy" style="height:15vh;">
+          <img src="{% character.link %}" class="card-img-top" alt="{{character.name}}" loading="lazy" style="height:15vh;">
             <div class="card-body">
               <h5 class="card-title" style="margin-bottom: 0 !important;">{{ character.name }}</h5>
               <a href="{% url 'guide:character' character.name %}" class="stretched-link"></a>

@@ -15,7 +15,7 @@ import math
 from .models import Character, Vote
 
 # the homepage
-"""
+
 class HomepageView(generic.ListView):
     template_name = 'guide/homepage.html'
     context_object_name = 'character_list'
@@ -23,7 +23,7 @@ class HomepageView(generic.ListView):
     def get_queryset(self):
         #Return all characters ordered alphabetically.
         return Character.objects.order_by('name')
-"""
+
 
 
 class HomepageView(generic.TemplateView):
