@@ -25,9 +25,10 @@ class HomepageView(generic.ListView):
         return Character.objects.order_by('name')
 
 
-
+"""
 class HomepageView(generic.TemplateView):
     template_name = 'guide/homepagetemplate.html'
+"""
 
 class PrivacyView(generic.TemplateView):
     template_name = 'guide/privacypolicy.html'
